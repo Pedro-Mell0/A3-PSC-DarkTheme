@@ -3,28 +3,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Forms;
+
 import beans.AlunoV4;
 import dao.AlunoV4DAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author pedro
  */
 public class FormNotas extends javax.swing.JFrame {
-    
 
-    
-    
     /**
-     * Creates new form FormNotas   
+     * Creates new form FormNotas
      */
-    public FormNotas()  {
+    public FormNotas() {
         initComponents();
-        this.setSize(450,470);
+        this.setSize(450, 470);
         this.setLocationRelativeTo(null);
-      
+
     }
 
     /**
@@ -214,8 +213,8 @@ public class FormNotas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_A3ActionPerformed
 
-     private void buscarNotas(int RA) {
-          try {
+    private void buscarNotas(int RA) {
+        try {
             AlunoV4DAO dao = new AlunoV4DAO();
             AlunoV4 aluno = dao.buscarNotasPorRA(RA);
 
@@ -230,13 +229,13 @@ public class FormNotas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Erro ao buscar notas: " + ex.getMessage());
         }
     }
-    
-    
+
+
     private void btn_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VoltarActionPerformed
         // TODO add your handling code here:
-         FormChecarAluno checar = new FormChecarAluno();
-    checar.setVisible(true);
-    this.dispose();
+        FormChecarAluno checar = new FormChecarAluno();
+        checar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_VoltarActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
@@ -258,7 +257,7 @@ public class FormNotas extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-            /* Set the Nimbus look and feel */
+        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -287,7 +286,7 @@ public class FormNotas extends javax.swing.JFrame {
                 new FormNotas().setVisible(true);
             }
         });
-    
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

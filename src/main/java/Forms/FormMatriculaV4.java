@@ -14,7 +14,6 @@ import dao.CursoV4DAO;
 import dao.MatriculaV4DAO;
 import java.util.ArrayList;
 
-
 /**
  *
  * @author pedro
@@ -26,7 +25,7 @@ public class FormMatriculaV4 extends javax.swing.JFrame {
      */
     public FormMatriculaV4() {
         initComponents();
-        this.setSize(587,450);
+        this.setSize(587, 450);
         this.setLocationRelativeTo(null);
     }
 
@@ -238,53 +237,53 @@ public class FormMatriculaV4 extends javax.swing.JFrame {
     private void btn_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtualizarActionPerformed
         // TODO add your handling code here:
         String idMatriculaStr = JOptionPane.showInputDialog(this, "Informe o ID da matrícula a ser atualizada:");
-    if (idMatriculaStr == null || idMatriculaStr.isEmpty()) {
-        return; // Se o usuário cancelar ou não fornecer o ID, interromper a operação
-    }
-
-    try {
-        int idMatricula = Integer.parseInt(idMatriculaStr);
-        MatriculaV4DAO dao = new MatriculaV4DAO();
-        MatriculaV4 matricula = dao.buscarPorId(idMatricula);
-
-        if (matricula == null) {
-            JOptionPane.showMessageDialog(this, "Matrícula não encontrada.");
-            return;
+        if (idMatriculaStr == null || idMatriculaStr.isEmpty()) {
+            return; // Se o usuário cancelar ou não fornecer o ID, interromper a operação
         }
 
-        // Solicitar novas informações
-        String dataEfetivacao = JOptionPane.showInputDialog(this, "Data de Efetivação:", matricula.getData_efetivacao());
-        String dataTermino = JOptionPane.showInputDialog(this, "Data de Término:", matricula.getData_termino());
-        
-        // Obtendo o ID do curso selecionado na Combo Box
-        int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
-        int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
+        try {
+            int idMatricula = Integer.parseInt(idMatriculaStr);
+            MatriculaV4DAO dao = new MatriculaV4DAO();
+            MatriculaV4 matricula = dao.buscarPorId(idMatricula);
 
-        // Atualizar o objeto matrícula com novas informações
-        matricula.setData_efetivacao(dataEfetivacao);
-        matricula.setData_termino(dataTermino);
+            if (matricula == null) {
+                JOptionPane.showMessageDialog(this, "Matrícula não encontrada.");
+                return;
+            }
 
-        // Atualizar no banco de dados
-        dao.atualizar(matricula, idCursoSelecionado, raAlunoSelecionado);
-        JOptionPane.showMessageDialog(this, "Matrícula atualizada com sucesso!");
+            // Solicitar novas informações
+            String dataEfetivacao = JOptionPane.showInputDialog(this, "Data de Efetivação:", matricula.getData_efetivacao());
+            String dataTermino = JOptionPane.showInputDialog(this, "Data de Término:", matricula.getData_termino());
 
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "ID da matrícula inválido.");
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Erro ao atualizar matrícula.");
-        
-    }
+            // Obtendo o ID do curso selecionado na Combo Box
+            int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
+            int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
+
+            // Atualizar o objeto matrícula com novas informações
+            matricula.setData_efetivacao(dataEfetivacao);
+            matricula.setData_termino(dataTermino);
+
+            // Atualizar no banco de dados
+            dao.atualizar(matricula, idCursoSelecionado, raAlunoSelecionado);
+            JOptionPane.showMessageDialog(this, "Matrícula atualizada com sucesso!");
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "ID da matrícula inválido.");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao atualizar matrícula.");
+
+        }
     }//GEN-LAST:event_btn_AtualizarActionPerformed
 
     private void btn_InserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InserirActionPerformed
         // TODO add your handling code here:
         String dataEfetivacao = txt_Data_Efetivação.getText();
         String dataTermino = txt_Data_Conclusão.getText();
-        
-         // Obtendo o ID do curso selecionado na Combo Box
-    int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
-    int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
+
+        // Obtendo o ID do curso selecionado na Combo Box
+        int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
+        int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
 
         MatriculaV4 matricula = new MatriculaV4();
         matricula.setData_efetivacao(dataEfetivacao);
@@ -311,35 +310,35 @@ public class FormMatriculaV4 extends javax.swing.JFrame {
     private void ComboBox_CursoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_CursoAncestorAdded
         // TODO add your handling code here:
         try {
-    CursoV4DAO dao = new CursoV4DAO();
-    ArrayList<CursoV4> lista = dao.listarCursos();
-    
-    ComboBox_Curso.removeAllItems();
-    
-    for(CursoV4 c : lista){
-        ComboBox_Curso.addItem(c.getNome_curso());
-    }
-} catch (SQLException ex) {
-    ex.printStackTrace(); // Print the stack trace to see the details of the exception
-    // Handle the exception as per your application's requirements
-}
+            CursoV4DAO dao = new CursoV4DAO();
+            ArrayList<CursoV4> lista = dao.listarCursos();
+
+            ComboBox_Curso.removeAllItems();
+
+            for (CursoV4 c : lista) {
+                ComboBox_Curso.addItem(c.getNome_curso());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(); // Print the stack trace to see the details of the exception
+            // Handle the exception as per your application's requirements
+        }
     }//GEN-LAST:event_ComboBox_CursoAncestorAdded
 
     private void ComboBox_AlunoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_AlunoAncestorAdded
         // TODO add your handling code here:
         try {
-    AlunoV4DAO dao = new AlunoV4DAO();
-    ArrayList<AlunoV4> lista = dao.listarRA();
-    
-    ComboBox_Aluno.removeAllItems();
-    
-    for(AlunoV4 c : lista){
-        ComboBox_Aluno.addItem(c.getNome_aluno());
-    }
-} catch (SQLException ex) {
-    ex.printStackTrace(); // Print the stack trace to see the details of the exception
-    // Handle the exception as per your application's requirements
-}
+            AlunoV4DAO dao = new AlunoV4DAO();
+            ArrayList<AlunoV4> lista = dao.listarRA();
+
+            ComboBox_Aluno.removeAllItems();
+
+            for (AlunoV4 c : lista) {
+                ComboBox_Aluno.addItem(c.getNome_aluno());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(); // Print the stack trace to see the details of the exception
+            // Handle the exception as per your application's requirements
+        }
     }//GEN-LAST:event_ComboBox_AlunoAncestorAdded
 
     private void ComboBox_AlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBox_AlunoActionPerformed
@@ -348,31 +347,31 @@ public class FormMatriculaV4 extends javax.swing.JFrame {
 
     private void btn_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VoltarActionPerformed
         // TODO add your handling code here:
-         FormEditor editar = new FormEditor();
-    editar.setVisible(true);
-    this.dispose();
+        FormEditor editar = new FormEditor();
+        editar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_VoltarActionPerformed
 
     private void btn_DeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DeletarActionPerformed
         // TODO add your handling code here:
-         String idMatricula = JOptionPane.showInputDialog(this, "Insira o id da matrícula a ser deletado:");
+        String idMatricula = JOptionPane.showInputDialog(this, "Insira o id da matrícula a ser deletado:");
 
-    // Verifica se um valor foi inserido
-    if (idMatricula != null && !idMatricula.trim().isEmpty()) {
-        try {
-            MatriculaV4DAO dao = new MatriculaV4DAO();
-            int IDMatricula = Integer.parseInt(idMatricula.trim()); // Converte o id para inteiro
-            dao.deletar(IDMatricula); // Assume que o método deletar no DAO aceita um id como inteiro
-            JOptionPane.showMessageDialog(this, "Matrícula deletado com sucesso!");
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "id inválido. Insira um número válido.");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Erro ao deletar matrícula.");
+        // Verifica se um valor foi inserido
+        if (idMatricula != null && !idMatricula.trim().isEmpty()) {
+            try {
+                MatriculaV4DAO dao = new MatriculaV4DAO();
+                int IDMatricula = Integer.parseInt(idMatricula.trim()); // Converte o id para inteiro
+                dao.deletar(IDMatricula); // Assume que o método deletar no DAO aceita um id como inteiro
+                JOptionPane.showMessageDialog(this, "Matrícula deletado com sucesso!");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "id inválido. Insira um número válido.");
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Erro ao deletar matrícula.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "id não inserido.");
         }
-    } else {
-        JOptionPane.showMessageDialog(this, "id não inserido.");
-    }
     }//GEN-LAST:event_btn_DeletarActionPerformed
 
     /**

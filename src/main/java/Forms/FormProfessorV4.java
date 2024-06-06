@@ -11,7 +11,7 @@ import dao.ProfessorV4DAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-    
+
 /**
  *
  * @author pedro
@@ -23,10 +23,9 @@ public class FormProfessorV4 extends javax.swing.JFrame {
      */
     public FormProfessorV4() {
         initComponents();
-        this.setSize(500,530);
+        this.setSize(500, 530);
         this.setLocationRelativeTo(null);
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -269,50 +268,48 @@ public class FormProfessorV4 extends javax.swing.JFrame {
 
     private void btn_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtualizarActionPerformed
         // TODO add your handling code here:
-         String idProfessorStr = JOptionPane.showInputDialog(this, "Informe o ID do professor a ser atualizado:");
-    if (idProfessorStr == null || idProfessorStr.isEmpty()) {
-        return; // Se o usuário cancelar ou não fornecer o ID, interromper a operação
-    }
-
-    try {
-        int idProfessor = Integer.parseInt(idProfessorStr);
-        ProfessorV4DAO dao = new ProfessorV4DAO();
-        ProfessorV4 professor = dao.buscarPorId(idProfessor);
-
-        if (professor == null) {
-            JOptionPane.showMessageDialog(this, "Professor não encontrado.");
-            return;
+        String idProfessorStr = JOptionPane.showInputDialog(this, "Informe o ID do professor a ser atualizado:");
+        if (idProfessorStr == null || idProfessorStr.isEmpty()) {
+            return; // Se o usuário cancelar ou não fornecer o ID, interromper a operação
         }
 
-        // Solicitar novas informações
-        String nomeProfessor = JOptionPane.showInputDialog(this, "Nome do Professor:", professor.getNome_professor());
-        String telefoneProfessor = JOptionPane.showInputDialog(this, "Telefone do Professor:", professor.getTelefone_professor());
-        String emailProfessor = JOptionPane.showInputDialog(this, "Email do Professor:", professor.getEmail_professor());
-        String enderecoProfessor = JOptionPane.showInputDialog(this, "Endereço do Professor:", professor.getEndereco_professor());
-        String senhaProfessor = JOptionPane.showInputDialog(this, "Senha:", professor.getSenha_professor());
-        
-        
-         // Obtendo o ID do curso selecionado na Combo Box
-        int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
+        try {
+            int idProfessor = Integer.parseInt(idProfessorStr);
+            ProfessorV4DAO dao = new ProfessorV4DAO();
+            ProfessorV4 professor = dao.buscarPorId(idProfessor);
 
-        // Atualizar o objeto professor com novas informações
-        professor.setNome_professor(nomeProfessor);
-        professor.setTelefone_professor(telefoneProfessor);
-        professor.setEmail_professor(emailProfessor);
-        professor.setEndereco_professor(enderecoProfessor);
-        professor.setSenha_professor(senhaProfessor);
-        
+            if (professor == null) {
+                JOptionPane.showMessageDialog(this, "Professor não encontrado.");
+                return;
+            }
 
-        // Atualizar no banco de dados
-        dao.atualizar(professor, idCursoSelecionado);
-        JOptionPane.showMessageDialog(this, "Professor atualizado com sucesso!");
+            // Solicitar novas informações
+            String nomeProfessor = JOptionPane.showInputDialog(this, "Nome do Professor:", professor.getNome_professor());
+            String telefoneProfessor = JOptionPane.showInputDialog(this, "Telefone do Professor:", professor.getTelefone_professor());
+            String emailProfessor = JOptionPane.showInputDialog(this, "Email do Professor:", professor.getEmail_professor());
+            String enderecoProfessor = JOptionPane.showInputDialog(this, "Endereço do Professor:", professor.getEndereco_professor());
+            String senhaProfessor = JOptionPane.showInputDialog(this, "Senha:", professor.getSenha_professor());
 
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "ID do professor inválido.");
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Erro ao atualizar professor.");
-    }
+            // Obtendo o ID do curso selecionado na Combo Box
+            int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
+
+            // Atualizar o objeto professor com novas informações
+            professor.setNome_professor(nomeProfessor);
+            professor.setTelefone_professor(telefoneProfessor);
+            professor.setEmail_professor(emailProfessor);
+            professor.setEndereco_professor(enderecoProfessor);
+            professor.setSenha_professor(senhaProfessor);
+
+            // Atualizar no banco de dados
+            dao.atualizar(professor, idCursoSelecionado);
+            JOptionPane.showMessageDialog(this, "Professor atualizado com sucesso!");
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "ID do professor inválido.");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao atualizar professor.");
+        }
     }//GEN-LAST:event_btn_AtualizarActionPerformed
 
     private void btn_InserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InserirActionPerformed
@@ -322,9 +319,9 @@ public class FormProfessorV4 extends javax.swing.JFrame {
         String enderecoProfessor = txt_Endereco.getText();
         String telefoneProfessor = txt_Telefone.getText();
         String senhaProfessor = txt_Senha.getText();
-        
+
         // Obtendo o ID do curso selecionado na Combo Box
-    int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
+        int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
 
         ProfessorV4 professor = new ProfessorV4();
         professor.setNome_professor(nomeProfessor);
@@ -337,7 +334,7 @@ public class FormProfessorV4 extends javax.swing.JFrame {
             ProfessorV4DAO dao = new ProfessorV4DAO();
             dao.inserir(professor, idCursoSelecionado);
             JOptionPane.showMessageDialog(this, "Professor inserido com sucesso!");
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Erro ao inserir Professor.");
         }
@@ -361,28 +358,28 @@ public class FormProfessorV4 extends javax.swing.JFrame {
 
     private void ComboBox_CursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBox_CursoActionPerformed
         // TODO add your handling code here:
-        
-        
+
+
     }//GEN-LAST:event_ComboBox_CursoActionPerformed
 
     private void ComboBox_CursoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_CursoAncestorAdded
         // TODO add your handling code here:
-        
-      try {
-    CursoV4DAO dao = new CursoV4DAO();
-    ArrayList<CursoV4> lista = dao.listarCursos();
-    
-    ComboBox_Curso.removeAllItems();
-    
-    for(CursoV4 c : lista){
-        ComboBox_Curso.addItem(c.getNome_curso());
-    }
-} catch (SQLException ex) {
-    ex.printStackTrace(); // Print the stack trace to see the details of the exception
-    // Handle the exception as per your application's requirements
-}
-      
-      
+
+        try {
+            CursoV4DAO dao = new CursoV4DAO();
+            ArrayList<CursoV4> lista = dao.listarCursos();
+
+            ComboBox_Curso.removeAllItems();
+
+            for (CursoV4 c : lista) {
+                ComboBox_Curso.addItem(c.getNome_curso());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(); // Print the stack trace to see the details of the exception
+            // Handle the exception as per your application's requirements
+        }
+
+
     }//GEN-LAST:event_ComboBox_CursoAncestorAdded
 
     private void txt_SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_SenhaActionPerformed
@@ -391,9 +388,9 @@ public class FormProfessorV4 extends javax.swing.JFrame {
 
     private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         // TODO add your handling code here:
-         FormRegistrar registro = new FormRegistrar();
-    registro.setVisible(true); 
-    this.dispose();
+        FormRegistrar registro = new FormRegistrar();
+        registro.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_voltarActionPerformed
 
     /**

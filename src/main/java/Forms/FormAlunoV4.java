@@ -23,7 +23,7 @@ public class FormAlunoV4 extends javax.swing.JFrame {
      */
     public FormAlunoV4() {
         initComponents();
-        this.setSize(500,670);
+        this.setSize(500, 670);
         this.setLocationRelativeTo(null);
     }
 
@@ -343,7 +343,7 @@ public class FormAlunoV4 extends javax.swing.JFrame {
         String senhaAluno = txt_Senha.getText();
         // Obtendo o ID do curso selecionado na Combo Box
         int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
-        
+
         AlunoV4 aluno = new AlunoV4();
         aluno.setNome_aluno(nomeAluno);
         aluno.setEmail_aluno(email);
@@ -352,13 +352,12 @@ public class FormAlunoV4 extends javax.swing.JFrame {
         aluno.setTelefone_aluno(telefone);
         aluno.setEndereco_aluno(endereco);
         aluno.setSenha_aluno(senhaAluno);
-        
-        
+
         try {
             AlunoV4DAO dao = new AlunoV4DAO();
             dao.inserir(aluno, idCursoSelecionado);
             JOptionPane.showMessageDialog(this, "Aluno inserido com sucesso!");
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Erro ao inserir Aluno.");
         }
@@ -366,77 +365,76 @@ public class FormAlunoV4 extends javax.swing.JFrame {
 
     private void btn_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtualizarActionPerformed
         // TODO add your handling code here:
-       String raStr = JOptionPane.showInputDialog(this, "Informe o RA do aluno a ser atualizado:");
-    if (raStr == null || raStr.isEmpty()) {
-        return; // Se o usuário cancelar ou não fornecer o RA, interromper a operação
-    }
-
-    try {
-        int ra = Integer.parseInt(raStr);
-        AlunoV4DAO dao = new AlunoV4DAO();
-        AlunoV4 aluno = dao.buscarPorRA(ra);
-        
-        if (aluno == null) {
-            JOptionPane.showMessageDialog(this, "Aluno não encontrado.");
-            return;
+        String raStr = JOptionPane.showInputDialog(this, "Informe o RA do aluno a ser atualizado:");
+        if (raStr == null || raStr.isEmpty()) {
+            return; // Se o usuário cancelar ou não fornecer o RA, interromper a operação
         }
 
-        // Solicitar novas informações
-        String nomeAluno = JOptionPane.showInputDialog(this, "Nome do aluno:", aluno.getNome_aluno());
-        String email = JOptionPane.showInputDialog(this, "Email do aluno:", aluno.getEmail_aluno());
-        String telefone = JOptionPane.showInputDialog(this, "Telefone do aluno:", aluno.getTelefone_aluno());
-        String dataNascimento = JOptionPane.showInputDialog(this, "Data de Nascimento do aluno:", aluno.getData_nascimento_aluno());
-        String endereco = JOptionPane.showInputDialog(this, "Endereço do aluno:", aluno.getEndereco_aluno());
-        String nomeResp = JOptionPane.showInputDialog(this, "Nome do responsável:", aluno.getNome_responsavel_aluno());
-        String senhaAluno =  JOptionPane.showInputDialog(this, "Senha:", aluno.getSenha_aluno());
+        try {
+            int ra = Integer.parseInt(raStr);
+            AlunoV4DAO dao = new AlunoV4DAO();
+            AlunoV4 aluno = dao.buscarPorRA(ra);
 
-         // Obtendo o ID do curso selecionado na Combo Box
-        int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
-        
-        // Atualizar o objeto aluno com novas informações
-        aluno.setNome_aluno(nomeAluno);
-        aluno.setEmail_aluno(email);
-        aluno.setTelefone_aluno(telefone);
-        aluno.setData_nascimento_aluno(dataNascimento);
-        aluno.setEndereco_aluno(endereco);
-        aluno.setNome_responsavel_aluno(nomeResp);
-        aluno.setSenha_aluno(senhaAluno);
+            if (aluno == null) {
+                JOptionPane.showMessageDialog(this, "Aluno não encontrado.");
+                return;
+            }
 
-        // Atualizar no banco de dados
-        dao.atualizar(aluno, idCursoSelecionado);
-        JOptionPane.showMessageDialog(this, "Aluno atualizado com sucesso!");
+            // Solicitar novas informações
+            String nomeAluno = JOptionPane.showInputDialog(this, "Nome do aluno:", aluno.getNome_aluno());
+            String email = JOptionPane.showInputDialog(this, "Email do aluno:", aluno.getEmail_aluno());
+            String telefone = JOptionPane.showInputDialog(this, "Telefone do aluno:", aluno.getTelefone_aluno());
+            String dataNascimento = JOptionPane.showInputDialog(this, "Data de Nascimento do aluno:", aluno.getData_nascimento_aluno());
+            String endereco = JOptionPane.showInputDialog(this, "Endereço do aluno:", aluno.getEndereco_aluno());
+            String nomeResp = JOptionPane.showInputDialog(this, "Nome do responsável:", aluno.getNome_responsavel_aluno());
+            String senhaAluno = JOptionPane.showInputDialog(this, "Senha:", aluno.getSenha_aluno());
 
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "RA inválido.");
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Erro ao atualizar Aluno.");
-    } 
+            // Obtendo o ID do curso selecionado na Combo Box
+            int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
+
+            // Atualizar o objeto aluno com novas informações
+            aluno.setNome_aluno(nomeAluno);
+            aluno.setEmail_aluno(email);
+            aluno.setTelefone_aluno(telefone);
+            aluno.setData_nascimento_aluno(dataNascimento);
+            aluno.setEndereco_aluno(endereco);
+            aluno.setNome_responsavel_aluno(nomeResp);
+            aluno.setSenha_aluno(senhaAluno);
+
+            // Atualizar no banco de dados
+            dao.atualizar(aluno, idCursoSelecionado);
+            JOptionPane.showMessageDialog(this, "Aluno atualizado com sucesso!");
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "RA inválido.");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao atualizar Aluno.");
+        }
     }//GEN-LAST:event_btn_AtualizarActionPerformed
 
     private void ComboBox_CursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBox_CursoActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_ComboBox_CursoActionPerformed
 
     private void ComboBox_CursoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_CursoAncestorAdded
         // TODO add your handling code here:
-        
-         try {
-    CursoV4DAO dao = new CursoV4DAO();
-    ArrayList<CursoV4> lista = dao.listarCursos();
-    
-    
-    ComboBox_Curso.removeAllItems();
-    
-    for(CursoV4 c : lista){
-        ComboBox_Curso.addItem(c.getNome_curso());
-    }
-} catch (SQLException ex) {
-    ex.printStackTrace(); // Print the stack trace to see the details of the exception
-    // Handle the exception as per your application's requirements
-}
-        
+
+        try {
+            CursoV4DAO dao = new CursoV4DAO();
+            ArrayList<CursoV4> lista = dao.listarCursos();
+
+            ComboBox_Curso.removeAllItems();
+
+            for (CursoV4 c : lista) {
+                ComboBox_Curso.addItem(c.getNome_curso());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(); // Print the stack trace to see the details of the exception
+            // Handle the exception as per your application's requirements
+        }
+
     }//GEN-LAST:event_ComboBox_CursoAncestorAdded
 
     private void txt_SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_SenhaActionPerformed
@@ -445,10 +443,10 @@ public class FormAlunoV4 extends javax.swing.JFrame {
 
     private void btn_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VoltarActionPerformed
         // TODO add your handling code here:
-         FormRegistrar registro = new FormRegistrar();
-    registro.setVisible(true);
-    this.dispose();
-        
+        FormRegistrar registro = new FormRegistrar();
+        registro.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_btn_VoltarActionPerformed
 
     /**

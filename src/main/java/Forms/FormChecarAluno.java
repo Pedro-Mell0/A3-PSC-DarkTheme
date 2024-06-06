@@ -15,15 +15,15 @@ import java.util.ArrayList;
  */
 public class FormChecarAluno extends javax.swing.JFrame {
 
-    /**3333
-     * Creates new form FormChecarAluno
+    /**
+     * 3333 Creates new form FormChecarAluno
      */
     public FormChecarAluno() {
         initComponents();
         this.setTitle("Visualizar");
-        this.setSize(322,325);
+        this.setSize(322, 325);
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -130,9 +130,9 @@ public class FormChecarAluno extends javax.swing.JFrame {
 
     private void btn_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MenuActionPerformed
         // TODO add your handling code here:
-         FormTelaMenu menu = new FormTelaMenu();
-    menu.setVisible(true);
-    this.dispose();
+        FormTelaMenu menu = new FormTelaMenu();
+        menu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_MenuActionPerformed
 
     /**

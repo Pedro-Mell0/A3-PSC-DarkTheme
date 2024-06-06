@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dao;
+
 import beans.AlunoV4;
 import com.mycompany.db.ConnectionFactory;
 import java.sql.Connection;
@@ -18,22 +19,22 @@ import javax.swing.JOptionPane;
  * @author pedro
  */
 public class AlunoV4DAO {
-private ConnectionFactory conexao;
-        private Connection conn;    
 
+    private ConnectionFactory conexao;
+    private Connection conn;
 
- public AlunoV4DAO() throws SQLException{
-            this.conexao = new ConnectionFactory();
-            this.conn = this.conexao.obtemConexao();
-        }
- 
- public ArrayList<AlunoV4> listarRA(){
+    public AlunoV4DAO() throws SQLException {
+        this.conexao = new ConnectionFactory();
+        this.conn = this.conexao.obtemConexao();
+    }
+
+    public ArrayList<AlunoV4> listarRA() {
         try {
             ArrayList<AlunoV4> lista = new ArrayList<>();
             String sql = "SELECT * FROM alunov4"; // Corrigi o nome da tabela para cursov4
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
-            
+
             while (rs.next()) {
                 AlunoV4 aluno = new AlunoV4();
                 aluno.setRA(rs.getInt("RA"));
@@ -49,21 +50,20 @@ private ConnectionFactory conexao;
                 aluno.setNota_A3("nota_a3");
                 aluno.setPresenca("presenca");
                 lista.add(aluno);
-            
-                
+
             }
             return lista;
-        } catch (SQLException erro){
+        } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Erro: " + erro);
             return null;
         }
     }
- 
- public AlunoV4 buscarNotasPorRA(int RA) throws SQLException {
+
+    public AlunoV4 buscarNotasPorRA(int RA) throws SQLException {
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        
+
         try {
             con = new ConnectionFactory().obtemConexao();
             String sql = "SELECT Nota_A1, Nota_A2, Nota_A3 FROM AlunoV4 WHERE RA = ?";
@@ -81,19 +81,23 @@ private ConnectionFactory conexao;
                 return null;
             }
         } finally {
-            if (rs != null) rs.close();
-            if (stmt != null) stmt.close();
-            if (con != null) con.close();
+            if (rs != null) {
+                rs.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (con != null) {
+                con.close();
+            }
         }
     }
- 
- 
-    
-public AlunoV4 buscarPresencaPorRA(int RA) throws SQLException {
+
+    public AlunoV4 buscarPresencaPorRA(int RA) throws SQLException {
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        
+
         try {
             con = new ConnectionFactory().obtemConexao();
             String sql = "SELECT Presenca FROM AlunoV4 WHERE RA = ?";
@@ -109,20 +113,26 @@ public AlunoV4 buscarPresencaPorRA(int RA) throws SQLException {
                 return null;
             }
         } finally {
-            if (rs != null) rs.close();
-            if (stmt != null) stmt.close();
-            if (con != null) con.close();
+            if (rs != null) {
+                rs.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (con != null) {
+                con.close();
+            }
         }
     }
 
-  public int inserir(AlunoV4 aluno, int id_curso) {
-            String sql = "INSERT INTO AlunoV4(nome_aluno, data_nascimento_aluno, nome_responsavel_aluno, "
-                    + "telefone_aluno, email_aluno, endereco_aluno, senha_aluno, id_curso) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-             int RA = -1; // Valor padrão para indicar falha na inserção
-            try {
-                
-        PreparedStatement stmt = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-       stmt.setString(1, aluno.getNome_aluno());
+    public int inserir(AlunoV4 aluno, int id_curso) {
+        String sql = "INSERT INTO AlunoV4(nome_aluno, data_nascimento_aluno, nome_responsavel_aluno, "
+                + "telefone_aluno, email_aluno, endereco_aluno, senha_aluno, id_curso) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        int RA = -1; // Valor padrão para indicar falha na inserção
+        try {
+
+            PreparedStatement stmt = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, aluno.getNome_aluno());
             stmt.setString(2, aluno.getData_nascimento_aluno());
             stmt.setString(3, aluno.getNome_responsavel_aluno());
             stmt.setString(4, aluno.getTelefone_aluno());
@@ -131,26 +141,25 @@ public AlunoV4 buscarPresencaPorRA(int RA) throws SQLException {
             stmt.setString(7, aluno.getSenha_aluno());
             stmt.setInt(8, id_curso); // Certifique-se de que este valor seja um inteiro
             stmt.executeUpdate();
-       ResultSet rs = stmt.getGeneratedKeys();
-       if (rs.next()) {
-           RA = rs.getInt(1); // Obtém o ID gerado pelo banco de dados
+            ResultSet rs = stmt.getGeneratedKeys();
+            if (rs.next()) {
+                RA = rs.getInt(1); // Obtém o ID gerado pelo banco de dados
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao inserir aluno: " + e.getMessage());
         }
-       
-       } catch(Exception e) {
-        JOptionPane.showMessageDialog(null, "Erro ao inserir aluno: " + e.getMessage());
-       }
-            
+
         return RA;
     }
-  
-  
-  public AlunoV4 buscarPorRA(int ra) throws SQLException {
+
+    public AlunoV4 buscarPorRA(int ra) throws SQLException {
         String sql = "SELECT * FROM AlunoV4 WHERE RA = ?";
         PreparedStatement stmt = this.conn.prepareStatement(sql);
         stmt.setInt(1, ra);
         ResultSet rs = stmt.executeQuery();
-        
-        if (rs.next()) {    
+
+        if (rs.next()) {
             AlunoV4 aluno = new AlunoV4();
             aluno.setRA(rs.getInt("RA"));
             aluno.setNome_aluno(rs.getString("nome_aluno"));
@@ -166,13 +175,12 @@ public AlunoV4 buscarPresencaPorRA(int RA) throws SQLException {
             aluno.setNota_A3("nota_a3");
             return aluno;
         }
-        
+
         return null;
     }
-  
-  
-   public void atualizar(AlunoV4 aluno, int id_curso) {
-            String sql = "UPDATE AlunoV4 SET nome_aluno = ?, data_nascimento_aluno = ?, nome_responsavel_aluno = ?, telefone_aluno = ?, email_aluno = ?, senha_aluno = ?, endereco_aluno = ?, id_curso = ? WHERE RA = ?";
+
+    public void atualizar(AlunoV4 aluno, int id_curso) {
+        String sql = "UPDATE AlunoV4 SET nome_aluno = ?, data_nascimento_aluno = ?, nome_responsavel_aluno = ?, telefone_aluno = ?, email_aluno = ?, senha_aluno = ?, endereco_aluno = ?, id_curso = ? WHERE RA = ?";
         try {
             PreparedStatement stmt = this.conn.prepareStatement(sql);
             stmt.setString(1, aluno.getNome_aluno());
@@ -189,7 +197,6 @@ public AlunoV4 buscarPresencaPorRA(int RA) throws SQLException {
             JOptionPane.showMessageDialog(null, "Erro ao atualizar aluno: " + e.getMessage());
         }
     }
-        
 
     public void deletar(int RA) {
         String sql = "DELETE FROM AlunoV4 WHERE RA = ?";
@@ -201,21 +208,19 @@ public AlunoV4 buscarPresencaPorRA(int RA) throws SQLException {
             JOptionPane.showMessageDialog(null, "Erro ao deletar aluno: " + e.getMessage());
         }
     }
-    
+
     public void atribuirNotas(AlunoV4 aluno) throws SQLException {
-    String sql = "UPDATE AlunoV4 SET Nota_A1 = ?, Nota_A2 = ?, Nota_A3 = ?, Presenca = ?  WHERE RA = ?";
-    try (PreparedStatement stmt = this.conn.prepareStatement(sql)) {
-        stmt.setString(1, aluno.getNota_A1());
-        stmt.setString(2, aluno.getNota_A2());
-        stmt.setString(3, aluno.getNota_A3());
-        stmt.setString(4, aluno.getPresenca());
-        stmt.setInt(5, aluno.getRA());
-        stmt.executeUpdate();
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(null, "Erro ao atualizar notas: " + e.getMessage());
-        throw e;
+        String sql = "UPDATE AlunoV4 SET Nota_A1 = ?, Nota_A2 = ?, Nota_A3 = ?, Presenca = ?  WHERE RA = ?";
+        try (PreparedStatement stmt = this.conn.prepareStatement(sql)) {
+            stmt.setString(1, aluno.getNota_A1());
+            stmt.setString(2, aluno.getNota_A2());
+            stmt.setString(3, aluno.getNota_A3());
+            stmt.setString(4, aluno.getPresenca());
+            stmt.setInt(5, aluno.getRA());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar notas: " + e.getMessage());
+            throw e;
+        }
     }
 }
-}
-  
-

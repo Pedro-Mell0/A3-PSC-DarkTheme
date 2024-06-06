@@ -20,7 +20,7 @@ public class FormEditor extends javax.swing.JFrame {
      */
     public FormEditor() {
         initComponents();
-        this.setSize(640,430);
+        this.setSize(640, 430);
         this.setLocationRelativeTo(null);
     }
 
@@ -196,20 +196,20 @@ public class FormEditor extends javax.swing.JFrame {
     private void btn_CursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CursosActionPerformed
         // TODO add your handling code here:
         FormCursoV4 CursoV4 = new FormCursoV4();
-    CursoV4.setVisible(true);
-    this.dispose();
+        CursoV4.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_CursosActionPerformed
 
     private void btn_MensalidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MensalidadeActionPerformed
         // TODO add your handling code here:
         FormMensalidadeV4 MensalidadeV4 = new FormMensalidadeV4();
-    MensalidadeV4.setVisible(true);
-    this.dispose();
+        MensalidadeV4.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_MensalidadeActionPerformed
 
     private void btn_deletarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deletarPActionPerformed
         // TODO add your handling code here:
-         String idProfessor = JOptionPane.showInputDialog(this, "Insira o ID do professor a ser deletado:");
+        String idProfessor = JOptionPane.showInputDialog(this, "Insira o ID do professor a ser deletado:");
 
         // Verifica se um valor foi inserido
         if (idProfessor != null && !idProfessor.trim().isEmpty()) {
@@ -231,38 +231,38 @@ public class FormEditor extends javax.swing.JFrame {
 
     private void btn_deletarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deletarAActionPerformed
         // TODO add your handling code here:
-         String raAluno = JOptionPane.showInputDialog(this, "Insira o RA do aluno a ser deletado:");
+        String raAluno = JOptionPane.showInputDialog(this, "Insira o RA do aluno a ser deletado:");
 
-    // Verifica se um valor foi inserido
-    if (raAluno != null && !raAluno.trim().isEmpty()) {
-        try {
-            AlunoV4DAO dao = new AlunoV4DAO();
-            int ra = Integer.parseInt(raAluno.trim()); // Converte o RA para inteiro
-            dao.deletar(ra); // Assume que o método deletar no DAO aceita um RA como inteiro
-            JOptionPane.showMessageDialog(this, "Aluno deletado com sucesso!");
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "RA inválido. Insira um número válido.");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Erro ao deletar aluno.");
+        // Verifica se um valor foi inserido
+        if (raAluno != null && !raAluno.trim().isEmpty()) {
+            try {
+                AlunoV4DAO dao = new AlunoV4DAO();
+                int ra = Integer.parseInt(raAluno.trim()); // Converte o RA para inteiro
+                dao.deletar(ra); // Assume que o método deletar no DAO aceita um RA como inteiro
+                JOptionPane.showMessageDialog(this, "Aluno deletado com sucesso!");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "RA inválido. Insira um número válido.");
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Erro ao deletar aluno.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "RA não inserido.");
         }
-    } else {
-        JOptionPane.showMessageDialog(this, "RA não inserido.");
-    }
     }//GEN-LAST:event_btn_deletarAActionPerformed
 
     private void btn_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MenuActionPerformed
         // TODO add your handling code here:
-         FormTelaMenu menu = new FormTelaMenu();
-    menu.setVisible(true);
-    this.dispose();
+        FormTelaMenu menu = new FormTelaMenu();
+        menu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_MenuActionPerformed
 
     private void MatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MatriculaActionPerformed
         // TODO add your handling code here:
         FormMatriculaV4 matricula = new FormMatriculaV4();
-    matricula.setVisible(true);
-    this.dispose();
+        matricula.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_MatriculaActionPerformed
 
     /**

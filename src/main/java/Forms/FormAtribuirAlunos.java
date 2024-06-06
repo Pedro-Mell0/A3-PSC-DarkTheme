@@ -21,13 +21,11 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
      */
     public FormAtribuirAlunos() {
         initComponents();
-       
-        this.setSize(500,525);    
+
+        this.setSize(500, 525);
         this.setLocationRelativeTo(null);
     }
 
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -207,8 +205,8 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
 
     private void ComboBox_RAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBox_RAActionPerformed
         // TODO add your handling code here:
-        
-        
+
+
     }//GEN-LAST:event_ComboBox_RAActionPerformed
 
     private void ComboBox_RAAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_RAAncestorAdded
@@ -225,7 +223,7 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }                    
+        }
     }//GEN-LAST:event_ComboBox_RAAncestorAdded
 
     private void txt_NotaA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_NotaA1ActionPerformed
@@ -248,9 +246,9 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         FormTelaMenu menu = new FormTelaMenu();
-    menu.setVisible(true);
-    this.dispose();
-         
+        menu.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_btn_menuActionPerformed
 
     private void btn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalvarActionPerformed
@@ -260,29 +258,27 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
         String notaA3 = txt_NotaA3.getText();
         String presenca = txt_Presenca.getText();
 
-    // Obtendo o RA do aluno selecionado na Combo Box
-    String selectedRA = (String) ComboBox_RA.getSelectedItem();
-    int RA = Integer.parseInt(selectedRA.split(" - ")[0]); // Assumindo que o formato é "RA - Nome"
+        // Obtendo o RA do aluno selecionado na Combo Box
+        String selectedRA = (String) ComboBox_RA.getSelectedItem();
+        int RA = Integer.parseInt(selectedRA.split(" - ")[0]); // Assumindo que o formato é "RA - Nome"
 
-    AlunoV4 aluno = new AlunoV4();
-    aluno.setRA(RA);
-    aluno.setNota_A1(notaA1);
-    aluno.setNota_A2(notaA2);
-    aluno.setNota_A3(notaA3);
-    aluno.setPresenca(presenca);
+        AlunoV4 aluno = new AlunoV4();
+        aluno.setRA(RA);
+        aluno.setNota_A1(notaA1);
+        aluno.setNota_A2(notaA2);
+        aluno.setNota_A3(notaA3);
+        aluno.setPresenca(presenca);
 
-    try {
-        AlunoV4DAO dao = new AlunoV4DAO();
-        dao.atribuirNotas(aluno);
-        JOptionPane.showMessageDialog(this, "Dados inseridos com sucesso!");
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Erro ao inserir Dados.");
-    }
+        try {
+            AlunoV4DAO dao = new AlunoV4DAO();
+            dao.atribuirNotas(aluno);
+            JOptionPane.showMessageDialog(this, "Dados inseridos com sucesso!");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao inserir Dados.");
+        }
     }//GEN-LAST:event_btn_SalvarActionPerformed
 
-  
-    
     /**
      * @param args the command line arguments
      */
@@ -334,4 +330,3 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
     private javax.swing.JTextField txt_Presenca;
     // End of variables declaration//GEN-END:variables
 }
-

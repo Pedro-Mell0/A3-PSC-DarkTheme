@@ -49,9 +49,8 @@ public class MatriculaV4DAO {
 
         return id_matricula;
     }
-    
-    
-      public MatriculaV4 buscarPorId(int idMatricula) throws SQLException {
+
+    public MatriculaV4 buscarPorId(int idMatricula) throws SQLException {
         String sql = "SELECT * FROM MatriculaV4 WHERE id_matricula = ?";
         PreparedStatement stmt = this.conn.prepareStatement(sql);
         stmt.setInt(1, idMatricula);
@@ -69,8 +68,8 @@ public class MatriculaV4DAO {
     }
 
     public void atualizar(MatriculaV4 matricula, int id_curso, int RA) {
-         String sql = "UPDATE MatriculaV4 SET data_efetivacao = ?,"
-                 + " data_termino = ?, id_curso = ?, RA = ? WHERE id_matricula = ?";
+        String sql = "UPDATE MatriculaV4 SET data_efetivacao = ?,"
+                + " data_termino = ?, id_curso = ?, RA = ? WHERE id_matricula = ?";
         try {
             PreparedStatement stmt = this.conn.prepareStatement(sql);
             stmt.setString(1, matricula.getData_efetivacao());

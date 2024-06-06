@@ -21,10 +21,10 @@ public class FormPresenca extends javax.swing.JFrame {
      */
     public FormPresenca() {
         initComponents();
-        
-        this.setSize(425,325);    
+
+        this.setSize(425, 325);
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -145,13 +145,11 @@ public class FormPresenca extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-  
     private void buscarPresenca(int RA) {
         try {
             AlunoV4DAO dao = new AlunoV4DAO();
             AlunoV4 aluno = dao.buscarPresencaPorRA(RA);
-            
+
             if (aluno != null) {
                 txt_presenca.setText(aluno.getPresenca());
             } else {
@@ -161,18 +159,18 @@ public class FormPresenca extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Erro ao buscar presença: " + ex.getMessage());
         }
     }
-    
-    
+
+
     private void btn_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VoltarActionPerformed
         // TODO add your handling code here:
         FormChecarAluno checar = new FormChecarAluno();
-    checar.setVisible(true);
-    this.dispose();
+        checar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_VoltarActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         // TODO add your handling code here:
-          String raText = txt_RA.getText().trim();
+        String raText = txt_RA.getText().trim();
         if (!raText.isEmpty()) {
             try {
                 int ra = Integer.parseInt(raText);

@@ -1,8 +1,8 @@
-    
 package beans;
 
 public class CursoV4 {
-private int id_curso;
+
+    private int id_curso;
     private String nome_curso;
     private String carga_horaria_curso;
 
@@ -29,6 +29,5 @@ private int id_curso;
     public void setCarga_horaria_curso(String carga_horaria_curso) {
         this.carga_horaria_curso = carga_horaria_curso;
     }
-    
-   
+
 }

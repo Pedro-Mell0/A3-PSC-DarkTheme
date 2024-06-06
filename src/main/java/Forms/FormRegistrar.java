@@ -15,7 +15,7 @@ public class FormRegistrar extends javax.swing.JFrame {
      */
     public FormRegistrar() {
         initComponents();
-        this.setSize(535,290);
+        this.setSize(535, 290);
         this.setLocationRelativeTo(null);
     }
 
@@ -119,29 +119,29 @@ public class FormRegistrar extends javax.swing.JFrame {
 
     private void btn_AlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AlunoActionPerformed
         // TODO add your handling code here:
-         FormAlunoV4 AlunoV4 = new FormAlunoV4();
-    AlunoV4.setVisible(true);
-    this.dispose();
+        FormAlunoV4 AlunoV4 = new FormAlunoV4();
+        AlunoV4.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_AlunoActionPerformed
 
     private void btn_ProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProfessorActionPerformed
         // TODO add your handling code here:
-         FormProfessorV4 ProfessorV4 = new FormProfessorV4();
-    ProfessorV4.setVisible(true);
-    this.dispose();
+        FormProfessorV4 ProfessorV4 = new FormProfessorV4();
+        ProfessorV4.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_ProfessorActionPerformed
 
     private void btn_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MenuActionPerformed
         // TODO add your handling code here:
-         FormTelaMenu menu = new FormTelaMenu();
-    menu.setVisible(true);
-    this.dispose();
+        FormTelaMenu menu = new FormTelaMenu();
+        menu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_MenuActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) { 
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -26,12 +26,11 @@ public class FormTelaMenu extends javax.swing.JFrame {
     public FormTelaMenu() {
         initComponents();
         this.setTitle("Menu");
-        this.setSize(960,600);    
+        this.setSize(960, 600);
         this.setLocationRelativeTo(null);
-        
+
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -148,43 +147,43 @@ public class FormTelaMenu extends javax.swing.JFrame {
 
     private void btn_OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_OkActionPerformed
         String email = txt_email.getText();
-String senha = txt_Senha.getText(); // Assumindo que você tenha um campo de senha no formulário
+        String senha = txt_Senha.getText(); // Assumindo que você tenha um campo de senha no formulário
 
-try {
-    TelaMenuDAO dao = new TelaMenuDAO();
-    String tipoUsuario = dao.verificarEmail(email);
+        try {
+            TelaMenuDAO dao = new TelaMenuDAO();
+            String tipoUsuario = dao.verificarEmail(email);
 
-    if (tipoUsuario != null) {
-        // Verificar a senha
-        boolean senhaCorreta = dao.verificarSenha(email, senha, tipoUsuario);
-        if (senhaCorreta) {
-            JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
+            if (tipoUsuario != null) {
+                // Verificar a senha
+                boolean senhaCorreta = dao.verificarSenha(email, senha, tipoUsuario);
+                if (senhaCorreta) {
+                    JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
 
-            // Abrir a JFrame correta
-            if ("aluno".equals(tipoUsuario)) {
-                // Abra a JFrame específica para alunos
-               FormChecarAluno checar = new FormChecarAluno();
-        checar.setVisible(true);
-            } else if ("professor".equals(tipoUsuario)) {
-                // Abra a JFrame específica para professores
-                 
-         FormAtribuirAlunos checar = new FormAtribuirAlunos();
-        checar.setVisible(true);
+                    // Abrir a JFrame correta
+                    if ("aluno".equals(tipoUsuario)) {
+                        // Abra a JFrame específica para alunos
+                        FormChecarAluno checar = new FormChecarAluno();
+                        checar.setVisible(true);
+                    } else if ("professor".equals(tipoUsuario)) {
+                        // Abra a JFrame específica para professores
+
+                        FormAtribuirAlunos checar = new FormAtribuirAlunos();
+                        checar.setVisible(true);
+                    }
+
+                    // Fechar a JFrame atual
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Senha incorreta. Por favor, tente novamente.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Email não encontrado. Por favor, verifique e tente novamente.");
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao conectar ao banco de dados.");
 
-            // Fechar a JFrame atual
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "Senha incorreta. Por favor, tente novamente.");
         }
-    } else {
-        JOptionPane.showMessageDialog(this, "Email não encontrado. Por favor, verifique e tente novamente.");
-    }
-} catch (SQLException e) {
-    e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Erro ao conectar ao banco de dados.");
-    
-}
     }//GEN-LAST:event_btn_OkActionPerformed
 
     private void btn_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarActionPerformed
@@ -253,7 +252,6 @@ try {
     }
 
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Label_Nome1;
     private javax.swing.JLabel Label_Nome2;
@@ -267,4 +265,3 @@ try {
     private javax.swing.JTextField txt_email;
     // End of variables declaration//GEN-END:variables
 }
-

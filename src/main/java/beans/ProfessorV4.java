@@ -15,10 +15,9 @@ public class ProfessorV4 {
     private String telefone_professor;
     private String email_professor;
     private String endereco_professor;
-    private int id_curso; 
+    private int id_curso;
     private String Senha_professor;
-    
-    
+
     public String getSenha_professor() {
         return Senha_professor;
     }
@@ -26,8 +25,7 @@ public class ProfessorV4 {
     public void setSenha_professor(String Senha) {
         this.Senha_professor = Senha;
     }
-   
- 
+
     public int getId_curso() {
         return id_curso;
     }
@@ -35,7 +33,6 @@ public class ProfessorV4 {
     public void setId_curso(int id_curso) {
         this.id_curso = id_curso;
     }
-   
 
     public int getID() {
         return ID;
@@ -77,7 +74,4 @@ public class ProfessorV4 {
         this.endereco_professor = endereco_professor;
     }
 
-    
-  
-    
 }

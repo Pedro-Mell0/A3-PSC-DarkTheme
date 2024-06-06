@@ -12,7 +12,6 @@ import dao.AlunoV4DAO;
 import dao.MensalidadeV4DAO;
 import java.util.ArrayList;
 
-
 /**
  *
  * @author pedro
@@ -24,8 +23,8 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
      */
     public FormMensalidadeV4() {
         initComponents();
-       this.setSize(500,480);
-       this.setLocationRelativeTo(null);
+        this.setSize(500, 480);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -282,59 +281,59 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
 
     private void btn_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtualizarActionPerformed
         // TODO add your handling code here:
-       String idMensalidadeStr = JOptionPane.showInputDialog(this, "Informe o ID da mensalidade a ser atualizada:");
-if (idMensalidadeStr == null || idMensalidadeStr.isEmpty()) {
-    return;  // Se o usuário cancelar ou não fornecer o ID, interromper a operação
-}
+        String idMensalidadeStr = JOptionPane.showInputDialog(this, "Informe o ID da mensalidade a ser atualizada:");
+        if (idMensalidadeStr == null || idMensalidadeStr.isEmpty()) {
+            return;  // Se o usuário cancelar ou não fornecer o ID, interromper a operação
+        }
 
-try {
-    int idMensalidade = Integer.parseInt(idMensalidadeStr);
-    MensalidadeV4DAO dao = new MensalidadeV4DAO();
-    MensalidadeV4 mensalidade = dao.buscarPorId(idMensalidade);
+        try {
+            int idMensalidade = Integer.parseInt(idMensalidadeStr);
+            MensalidadeV4DAO dao = new MensalidadeV4DAO();
+            MensalidadeV4 mensalidade = dao.buscarPorId(idMensalidade);
 
-    if (mensalidade == null) {
-        JOptionPane.showMessageDialog(this, "Mensalidade não encontrada");
-        return;
-    }
+            if (mensalidade == null) {
+                JOptionPane.showMessageDialog(this, "Mensalidade não encontrada");
+                return;
+            }
 
-    // Solicitar novas informações
-    String dataEmissao = JOptionPane.showInputDialog(this, "Data de Emissão:", mensalidade.getData_emissao());
-    String dataVencimento = JOptionPane.showInputDialog(this, "Data de Vencimento:", mensalidade.getData_vencimento());
-    String dataPagamento = JOptionPane.showInputDialog(this, "Data de Pagamento:", mensalidade.getData_pagamento());
-    String valor = JOptionPane.showInputDialog(this, "Valor:", mensalidade.getValor());
+            // Solicitar novas informações
+            String dataEmissao = JOptionPane.showInputDialog(this, "Data de Emissão:", mensalidade.getData_emissao());
+            String dataVencimento = JOptionPane.showInputDialog(this, "Data de Vencimento:", mensalidade.getData_vencimento());
+            String dataPagamento = JOptionPane.showInputDialog(this, "Data de Pagamento:", mensalidade.getData_pagamento());
+            String valor = JOptionPane.showInputDialog(this, "Valor:", mensalidade.getValor());
 
-    // Verifique se o ComboBox_Aluno está acessível e obtem o RA do aluno
-    int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
+            // Verifique se o ComboBox_Aluno está acessível e obtem o RA do aluno
+            int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
 
-    // Atualizar o objeto mensalidade com novas informações
-    mensalidade.setData_emissao(dataEmissao);
-    mensalidade.setData_vencimento(dataVencimento);
-    mensalidade.setData_pagamento(dataPagamento);
-    mensalidade.setValor(valor);
-    mensalidade.setRA(raAlunoSelecionado); // Não esquecer de atualizar o RA
+            // Atualizar o objeto mensalidade com novas informações
+            mensalidade.setData_emissao(dataEmissao);
+            mensalidade.setData_vencimento(dataVencimento);
+            mensalidade.setData_pagamento(dataPagamento);
+            mensalidade.setValor(valor);
+            mensalidade.setRA(raAlunoSelecionado); // Não esquecer de atualizar o RA
 
-    // Atualizar no banco de dados
-    dao.atualizar(mensalidade, raAlunoSelecionado);
-    JOptionPane.showMessageDialog(this, "Mensalidade atualizada com sucesso!");
+            // Atualizar no banco de dados
+            dao.atualizar(mensalidade, raAlunoSelecionado);
+            JOptionPane.showMessageDialog(this, "Mensalidade atualizada com sucesso!");
 
-} catch (NumberFormatException e) {
-    JOptionPane.showMessageDialog(this, "ID da mensalidade inválido");
-} catch (SQLException ex) {
-    ex.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Erro ao atualizar mensalidade.");
-}
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "ID da mensalidade inválido");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao atualizar mensalidade.");
+        }
     }//GEN-LAST:event_btn_AtualizarActionPerformed
 
     private void btn_InserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InserirActionPerformed
         // TODO add your handling code here:
-        String Valor = txt_Valor.getText(); 
+        String Valor = txt_Valor.getText();
         String dataVencimento = txt_DataVencimento.getText();
         String dataEmissao = txt_DataEmissao.getText();
         String dataPagamento = txt_DataPagamento.getText();
 
-         // Obtendo o ID do curso selecionado na Combo Box
-         int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
-        
+        // Obtendo o ID do curso selecionado na Combo Box
+        int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
+
         MensalidadeV4 mensalidade = new MensalidadeV4();
         mensalidade.setData_emissao(dataEmissao);
         mensalidade.setData_pagamento(dataPagamento);
@@ -345,7 +344,7 @@ try {
             MensalidadeV4DAO dao = new MensalidadeV4DAO();
             dao.inserir(mensalidade, raAlunoSelecionado);
             JOptionPane.showMessageDialog(this, "Mensalidade inserido com sucesso!");
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Erro ao inserir Mensalidade.");
         }
@@ -375,28 +374,28 @@ try {
 
     private void ComboBox_AlunoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_AlunoAncestorAdded
         // TODO add your handling code here:
-           try {
-    AlunoV4DAO dao = new AlunoV4DAO();
-    ArrayList<AlunoV4> lista = dao.listarRA();
-    
-    ComboBox_Aluno.removeAllItems();
-    
-    for(AlunoV4 c : lista){
-        ComboBox_Aluno.addItem(c.getNome_aluno());
-    }
-} catch (SQLException ex) {
-    ex.printStackTrace(); // Print the stack trace to see the details of the exception
-    // Handle the exception as per your application's requirements
+        try {
+            AlunoV4DAO dao = new AlunoV4DAO();
+            ArrayList<AlunoV4> lista = dao.listarRA();
 
-    }      
-        
+            ComboBox_Aluno.removeAllItems();
+
+            for (AlunoV4 c : lista) {
+                ComboBox_Aluno.addItem(c.getNome_aluno());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(); // Print the stack trace to see the details of the exception
+            // Handle the exception as per your application's requirements
+
+        }
+
     }//GEN-LAST:event_ComboBox_AlunoAncestorAdded
 
     private void btn_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VoltarActionPerformed
         // TODO add your handling code here:
-         FormEditor Editor = new FormEditor();
-    Editor.setVisible(true);
-    this.dispose();
+        FormEditor Editor = new FormEditor();
+        Editor.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_VoltarActionPerformed
 
     /**

@@ -1,4 +1,3 @@
-
 package Forms;
 
 import beans.CursoV4;
@@ -8,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-    
+
 /**
  *
  * @author pedro
@@ -20,11 +19,10 @@ public class FormCursoV4 extends javax.swing.JFrame {
      */
     public FormCursoV4() {
         initComponents();
-        this.setSize(200,271);
+        this.setSize(200, 271);
         this.setLocationRelativeTo(null);
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -184,65 +182,65 @@ public class FormCursoV4 extends javax.swing.JFrame {
         String idCurso = JOptionPane.showInputDialog(this, "Insira o ID do curso a ser deletado:");
 
         if (idCurso != null && !idCurso.trim().isEmpty()) {
-        try {
-            CursoV4DAO dao = new CursoV4DAO();
-            int ra = Integer.parseInt(idCurso.trim()); // Converte o ID para inteiro
-            dao.deletar(idCurso); // Assume que o método deletar no DAO aceita um ID como inteiro
-            JOptionPane.showMessageDialog(this, "Curso deletado com sucesso!");
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "ID inválido. Insira um número válido.");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Erro ao deletar curso.");
-        }
-    } else {
-        JOptionPane.showMessageDialog(this, "ID não inserido.");
+            try {
+                CursoV4DAO dao = new CursoV4DAO();
+                int ra = Integer.parseInt(idCurso.trim()); // Converte o ID para inteiro
+                dao.deletar(idCurso); // Assume que o método deletar no DAO aceita um ID como inteiro
+                JOptionPane.showMessageDialog(this, "Curso deletado com sucesso!");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "ID inválido. Insira um número válido.");
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Erro ao deletar curso.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "ID não inserido.");
         }
     }//GEN-LAST:event_btn_DeletarActionPerformed
 
     private void btn_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtualizarActionPerformed
         // TODO add your handling code here:
-       String idCursoStr = JOptionPane.showInputDialog(this, "Informe o ID do curso a ser atualizado:");
-    if (idCursoStr == null || idCursoStr.isEmpty()) {
-        return; // Se o usuário cancelar ou não fornecer o ID, interromper a operação
-    }
-
-    try {
-        int idCurso = Integer.parseInt(idCursoStr);
-        CursoV4DAO dao = new CursoV4DAO();
-        CursoV4 curso = dao.buscarPorId(idCurso);
-
-        if (curso == null) {
-            JOptionPane.showMessageDialog(this, "Curso não encontrado.");
-            return;
+        String idCursoStr = JOptionPane.showInputDialog(this, "Informe o ID do curso a ser atualizado:");
+        if (idCursoStr == null || idCursoStr.isEmpty()) {
+            return; // Se o usuário cancelar ou não fornecer o ID, interromper a operação
         }
 
-        // Solicitar novas informações
-        String nomeCurso = JOptionPane.showInputDialog(this, "Nome do curso:", curso.getNome_curso());
-        String cargaHoraria = JOptionPane.showInputDialog(this, "Carga Horária do curso:", curso.getCarga_horaria_curso());
+        try {
+            int idCurso = Integer.parseInt(idCursoStr);
+            CursoV4DAO dao = new CursoV4DAO();
+            CursoV4 curso = dao.buscarPorId(idCurso);
 
-        // Atualizar o objeto curso com novas informações
-        curso.setNome_curso(nomeCurso);
-        curso.setCarga_horaria_curso(cargaHoraria);
+            if (curso == null) {
+                JOptionPane.showMessageDialog(this, "Curso não encontrado.");
+                return;
+            }
 
-        // Atualizar no banco de dados
-        dao.atualizar(curso);
-        JOptionPane.showMessageDialog(this, "Curso atualizado com sucesso!");
+            // Solicitar novas informações
+            String nomeCurso = JOptionPane.showInputDialog(this, "Nome do curso:", curso.getNome_curso());
+            String cargaHoraria = JOptionPane.showInputDialog(this, "Carga Horária do curso:", curso.getCarga_horaria_curso());
 
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "ID do curso inválido.");
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Erro ao atualizar curso.");
+            // Atualizar o objeto curso com novas informações
+            curso.setNome_curso(nomeCurso);
+            curso.setCarga_horaria_curso(cargaHoraria);
+
+            // Atualizar no banco de dados
+            dao.atualizar(curso);
+            JOptionPane.showMessageDialog(this, "Curso atualizado com sucesso!");
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "ID do curso inválido.");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao atualizar curso.");
         }
 
     }//GEN-LAST:event_btn_AtualizarActionPerformed
 
     private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         // TODO add your handling code here:
-         FormEditor Editor = new FormEditor();
-    Editor.setVisible(true);
-    this.dispose();
+        FormEditor Editor = new FormEditor();
+        Editor.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_voltarActionPerformed
 
     /**

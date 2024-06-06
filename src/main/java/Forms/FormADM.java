@@ -18,7 +18,7 @@ public class FormADM extends javax.swing.JFrame {
      */
     public FormADM() {
         initComponents();
-        this.setSize(551,270);
+        this.setSize(551, 270);
         this.setLocationRelativeTo(null);
     }
 
@@ -115,29 +115,27 @@ public class FormADM extends javax.swing.JFrame {
     private void btn_AvançarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AvançarActionPerformed
         // TODO add your handling code here:
         String senha = new String(Password.getPassword());
-    
-    // Verifique se a senha é "admin"
-    if ("admin".equals(senha)) {
-        // Execute a ação desejada
-        JOptionPane.showMessageDialog(this, "Acesso concedido");
 
-        FormEditor Editor = new FormEditor();
-    Editor.setVisible(true);
-    this.dispose();
-             
-        
-                
-    } else {
-        // Exibe uma mensagem de erro
-        JOptionPane.showMessageDialog(this, "Senha incorreta", "Erro", JOptionPane.ERROR_MESSAGE);
-    }
+        // Verifique se a senha é "admin"
+        if ("admin".equals(senha)) {
+            // Execute a ação desejada
+            JOptionPane.showMessageDialog(this, "Acesso concedido");
+
+            FormEditor Editor = new FormEditor();
+            Editor.setVisible(true);
+            this.dispose();
+
+        } else {
+            // Exibe uma mensagem de erro
+            JOptionPane.showMessageDialog(this, "Senha incorreta", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btn_AvançarActionPerformed
 
     private void btn_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VoltarActionPerformed
         // TODO add your handling code here:
-         FormTelaMenu Menu = new FormTelaMenu();
-    Menu.setVisible(true);
-    this.dispose();
+        FormTelaMenu Menu = new FormTelaMenu();
+        Menu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_VoltarActionPerformed
 
     /**
