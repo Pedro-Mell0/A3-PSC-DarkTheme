@@ -202,41 +202,19 @@ public AlunoV4 buscarPresencaPorRA(int RA) throws SQLException {
         }
     }
     
-    public int atribuirNotas(AlunoV4 aluno) {
-    String sql = "INSERT INTO AlunoV4(RA, Nota_A1, Nota_A2, Nota_A3) VALUES (?, ?, ?, ?)";
-    int idNotaInserida = -1; // Valor padrão para indicar falha na inserção
-    try {
-        PreparedStatement stmt = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-        stmt.setInt(1, aluno.getRA()); // Supondo que RA seja um identificador único para cada aluno
-        stmt.setString(2, aluno.getNota_A1());
-        stmt.setString(3, aluno.getNota_A2());
-        stmt.setString(4, aluno.getNota_A3());
+    public void atribuirNotas(AlunoV4 aluno) throws SQLException {
+    String sql = "UPDATE AlunoV4 SET Nota_A1 = ?, Nota_A2 = ?, Nota_A3 = ?, Presenca = ?  WHERE RA = ?";
+    try (PreparedStatement stmt = this.conn.prepareStatement(sql)) {
+        stmt.setString(1, aluno.getNota_A1());
+        stmt.setString(2, aluno.getNota_A2());
+        stmt.setString(3, aluno.getNota_A3());
+        stmt.setString(4, aluno.getPresenca());
+        stmt.setInt(5, aluno.getRA());
         stmt.executeUpdate();
-        ResultSet rs = stmt.getGeneratedKeys();
-        if (rs.next()) {
-            idNotaInserida = rs.getInt(1); // Obtém o ID gerado pelo banco de dados
-        }
-    } catch(Exception e) {
-        JOptionPane.showMessageDialog(null, "Erro ao inserir notas: " + e.getMessage());
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Erro ao atualizar notas: " + e.getMessage());
+        throw e;
     }
-    return idNotaInserida;
-}
-    
-    public int atribuirPresenca(AlunoV4 aluno) {
-    String sql = "INSERT INTO AlunoV4(RA, Presenca) VALUES (?, ?)";
-    int idPresencaInserida = -1; // Valor padrão para indicar falha na inserção
-    try {
-        PreparedStatement stmt = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-        stmt.setInt(1, aluno.getRA()); // Supondo que RA seja um identificador único para cada aluno
-        stmt.setString(2, aluno.getPresenca());
-        ResultSet rs = stmt.getGeneratedKeys();
-        if (rs.next()) {
-            idPresencaInserida = rs.getInt(1); // Obtém o ID gerado pelo banco de dados
-        }
-    } catch(Exception e) {
-        JOptionPane.showMessageDialog(null, "Erro ao inserir presença: " + e.getMessage());
-    }
-    return idPresencaInserida;
 }
 }
   

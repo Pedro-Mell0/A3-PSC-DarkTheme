@@ -39,9 +39,10 @@ public class FormPresenca extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         txt_presenca = new javax.swing.JTextField();
         Label_RA = new javax.swing.JLabel();
-        ComboBox_Presenca = new javax.swing.JComboBox<>();
         Label_RA1 = new javax.swing.JLabel();
         btn_Voltar = new javax.swing.JButton();
+        txt_RA = new javax.swing.JTextField();
+        btn_buscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,24 +55,8 @@ public class FormPresenca extends javax.swing.JFrame {
 
         Label_RA.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         Label_RA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_RA.setText("RA/Nome:");
+        Label_RA.setText("RA:");
         Label_RA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        ComboBox_Presenca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ComboBox_Presenca.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                ComboBox_PresencaAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        ComboBox_Presenca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBox_PresencaActionPerformed(evt);
-            }
-        });
 
         Label_RA1.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         Label_RA1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -86,40 +71,58 @@ public class FormPresenca extends javax.swing.JFrame {
             }
         });
 
+        txt_RA.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        txt_RA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        btn_buscar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_buscar.setText("Buscar");
+        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Label_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Label_RA1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ComboBox_Presenca, 0, 217, Short.MAX_VALUE)
-                            .addComponent(txt_presenca)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txt_presenca, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txt_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Label_RA, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                    .addComponent(ComboBox_Presenca))
-                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Label_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                    .addComponent(txt_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Label_RA1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_presenca, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,34 +145,17 @@ public class FormPresenca extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ComboBox_PresencaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_PresencaAncestorAdded
-        // TODO add your handling code here:
-try {
-            AlunoV4DAO dao = new AlunoV4DAO();
-            ArrayList<AlunoV4> lista = dao.listarRA();
-
-            ComboBox_Presenca.removeAllItems();
-
-            for (AlunoV4 c : lista) {
-                String displayText = c.getRA() + " - " + c.getNome_aluno();
-                ComboBox_Presenca.addItem(displayText);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }//GEN-LAST:event_ComboBox_PresencaAncestorAdded
-
     
+  
     private void buscarPresenca(int RA) {
         try {
             AlunoV4DAO dao = new AlunoV4DAO();
             AlunoV4 aluno = dao.buscarPresencaPorRA(RA);
             
             if (aluno != null) {
-               
-               txt_presenca.setText(aluno.getPresenca());
+                txt_presenca.setText(aluno.getPresenca());
             } else {
-                JOptionPane.showMessageDialog(this, "Presença não encontradas para o RA: " + RA);
+                JOptionPane.showMessageDialog(this, "Presença não encontrada para o RA: " + RA);
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Erro ao buscar presença: " + ex.getMessage());
@@ -177,21 +163,27 @@ try {
     }
     
     
-    private void ComboBox_PresencaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBox_PresencaActionPerformed
-        // TODO add your handling code here:
-      String selectedItem = (String) ComboBox_Presenca.getSelectedItem();
-        if (selectedItem != null) {
-            int selectedRA = Integer.parseInt(selectedItem.split(" - ")[0]);
-            buscarPresenca(selectedRA);
-        }
-    }//GEN-LAST:event_ComboBox_PresencaActionPerformed
-
     private void btn_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VoltarActionPerformed
         // TODO add your handling code here:
         FormChecarAluno checar = new FormChecarAluno();
     checar.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_btn_VoltarActionPerformed
+
+    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+        // TODO add your handling code here:
+          String raText = txt_RA.getText().trim();
+        if (!raText.isEmpty()) {
+            try {
+                int ra = Integer.parseInt(raText);
+                buscarPresenca(ra);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "RA deve ser um número válido.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, insira um RA.");
+        }
+    }//GEN-LAST:event_btn_buscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,11 +221,12 @@ try {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ComboBox_Presenca;
     private javax.swing.JLabel Label_RA;
     private javax.swing.JLabel Label_RA1;
     private javax.swing.JButton btn_Voltar;
+    private javax.swing.JButton btn_buscar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txt_RA;
     private javax.swing.JTextField txt_presenca;
     // End of variables declaration//GEN-END:variables
 }

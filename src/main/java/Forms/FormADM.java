@@ -123,6 +123,7 @@ public class FormADM extends javax.swing.JFrame {
 
         FormEditor Editor = new FormEditor();
     Editor.setVisible(true);
+    this.dispose();
              
         
                 

@@ -83,6 +83,7 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
         Label_RA.setText("RA:");
         Label_RA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+        txt_NotaA1.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         txt_NotaA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_NotaA1ActionPerformed(evt);
@@ -97,18 +98,21 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
         Label_Notas2.setText("Nota A1:");
         Label_Notas2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+        txt_Presenca.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         txt_Presenca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_PresencaActionPerformed(evt);
             }
         });
 
+        txt_NotaA3.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         txt_NotaA3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_NotaA3ActionPerformed(evt);
             }
         });
 
+        txt_NotaA2.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         txt_NotaA2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_NotaA2ActionPerformed(evt);
@@ -255,25 +259,26 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
         String notaA2 = txt_NotaA2.getText();
         String notaA3 = txt_NotaA3.getText();
         String presenca = txt_Presenca.getText();
-        // Obtendo o ID do curso selecionado na Combo Box
-       
-        
-        AlunoV4 aluno = new AlunoV4();
-        aluno.setNota_A1(notaA1);
-        aluno.setNota_A2(notaA2);
-        aluno.setNota_A3(notaA3);
-        aluno.setPresenca(presenca);
-        
-        
-        try {
-            AlunoV4DAO dao = new AlunoV4DAO();
-            dao.atribuirNotas(aluno);
-            dao.atribuirPresenca(aluno);
-            JOptionPane.showMessageDialog(this, "Dados inserido com sucesso!");
-        }catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Erro ao inserir Dados.");
-        }
+
+    // Obtendo o RA do aluno selecionado na Combo Box
+    String selectedRA = (String) ComboBox_RA.getSelectedItem();
+    int RA = Integer.parseInt(selectedRA.split(" - ")[0]); // Assumindo que o formato é "RA - Nome"
+
+    AlunoV4 aluno = new AlunoV4();
+    aluno.setRA(RA);
+    aluno.setNota_A1(notaA1);
+    aluno.setNota_A2(notaA2);
+    aluno.setNota_A3(notaA3);
+    aluno.setPresenca(presenca);
+
+    try {
+        AlunoV4DAO dao = new AlunoV4DAO();
+        dao.atribuirNotas(aluno);
+        JOptionPane.showMessageDialog(this, "Dados inseridos com sucesso!");
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Erro ao inserir Dados.");
+    }
     }//GEN-LAST:event_btn_SalvarActionPerformed
 
   

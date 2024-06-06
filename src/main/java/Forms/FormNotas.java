@@ -24,13 +24,7 @@ public class FormNotas extends javax.swing.JFrame {
         initComponents();
         this.setSize(450,470);
         this.setLocationRelativeTo(null);
-       
-         ComboBox_RA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBox_RAActionPerformed(evt);
-    
-              }
-        });
+      
     }
 
     /**
@@ -50,8 +44,9 @@ public class FormNotas extends javax.swing.JFrame {
         Label_A3 = new javax.swing.JLabel();
         txt_A3 = new javax.swing.JTextField();
         Label_A1 = new javax.swing.JLabel();
-        ComboBox_RA = new javax.swing.JComboBox<>();
         btn_Voltar = new javax.swing.JButton();
+        btn_buscar = new javax.swing.JButton();
+        txt_RA = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,7 +63,7 @@ public class FormNotas extends javax.swing.JFrame {
 
         Label_RA.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         Label_RA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_RA.setText("RA/Nome:");
+        Label_RA.setText("RA:");
         Label_RA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         Label_A2.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
@@ -105,22 +100,6 @@ public class FormNotas extends javax.swing.JFrame {
         Label_A1.setText("A1:");
         Label_A1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        ComboBox_RA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ComboBox_RA.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                ComboBox_RAAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        ComboBox_RA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBox_RAActionPerformed(evt);
-            }
-        });
-
         btn_Voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
         btn_Voltar.setText("< VOLTAR");
         btn_Voltar.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +108,17 @@ public class FormNotas extends javax.swing.JFrame {
             }
         });
 
+        btn_buscar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_buscar.setText("Buscar");
+        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscarActionPerformed(evt);
+            }
+        });
+
+        txt_RA.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        txt_RA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -136,34 +126,45 @@ public class FormNotas extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Label_RA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Label_A3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Label_A2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Label_RA, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                     .addComponent(Label_A1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txt_A1)
-                                .addComponent(ComboBox_RA, 0, 211, Short.MAX_VALUE))
-                            .addComponent(txt_A2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_A1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_A2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_A3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_A3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(14, 14, 14))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(76, 76, 76)
                 .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Label_RA, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                    .addComponent(ComboBox_RA))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(Label_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_RA, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                            .addComponent(btn_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_A1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,7 +189,7 @@ public class FormNotas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,29 +214,11 @@ public class FormNotas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_A3ActionPerformed
 
-    private void ComboBox_RAAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_RAAncestorAdded
-        // TODO add your handling code here:
-        
-        try {
-            AlunoV4DAO dao = new AlunoV4DAO();
-            ArrayList<AlunoV4> lista = dao.listarRA();
-
-            ComboBox_RA.removeAllItems();
-
-            for (AlunoV4 c : lista) {
-                String displayText = c.getRA() + " - " + c.getNome_aluno();
-                ComboBox_RA.addItem(displayText);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }//GEN-LAST:event_ComboBox_RAAncestorAdded
-
      private void buscarNotas(int RA) {
-        try {
+          try {
             AlunoV4DAO dao = new AlunoV4DAO();
             AlunoV4 aluno = dao.buscarNotasPorRA(RA);
-            
+
             if (aluno != null) {
                 txt_A1.setText(aluno.getNota_A1());
                 txt_A2.setText(aluno.getNota_A2());
@@ -249,21 +232,27 @@ public class FormNotas extends javax.swing.JFrame {
     }
     
     
-    private void ComboBox_RAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBox_RAActionPerformed
-        // TODO add your handling code here:
-         String selectedItem = (String) ComboBox_RA.getSelectedItem();
-        if (selectedItem != null) {
-            int selectedRA = Integer.parseInt(selectedItem.split(" - ")[0]);
-            buscarNotas(selectedRA);
-        }
-    }//GEN-LAST:event_ComboBox_RAActionPerformed
-
     private void btn_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VoltarActionPerformed
         // TODO add your handling code here:
          FormChecarAluno checar = new FormChecarAluno();
     checar.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_btn_VoltarActionPerformed
+
+    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+        // TODO add your handling code here:
+        String raText = txt_RA.getText().trim();
+        if (!raText.isEmpty()) {
+            try {
+                int ra = Integer.parseInt(raText);
+                buscarNotas(ra);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "RA deve ser um número válido.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, insira um RA.");
+        }
+    }//GEN-LAST:event_btn_buscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,15 +290,16 @@ public class FormNotas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ComboBox_RA;
     private javax.swing.JLabel Label_A1;
     private javax.swing.JLabel Label_A2;
     private javax.swing.JLabel Label_A3;
     private javax.swing.JLabel Label_RA;
     private javax.swing.JButton btn_Voltar;
+    private javax.swing.JButton btn_buscar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_A1;
     private javax.swing.JTextField txt_A2;
     private javax.swing.JTextField txt_A3;
+    private javax.swing.JTextField txt_RA;
     // End of variables declaration//GEN-END:variables
 }
