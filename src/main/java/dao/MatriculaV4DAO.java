@@ -27,14 +27,16 @@ public class MatriculaV4DAO {
         this.conn = this.conexao.obtemConexao();
     }
 
-    public int inserir(MatriculaV4 matricula) {
+    public int inserir(MatriculaV4 matricula, int id_curso, int RA) {
         String sql = "INSERT INTO MatriculaV4(data_efetivacao,"
-                + " data_termino) VALUES (?, ?)";
+                + " data_termino, id_curso, RA) VALUES (?, ?, ?, ?)";
         int id_matricula = -1;
         try {
             PreparedStatement stmt = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, matricula.getData_efetivacao());
             stmt.setString(2, matricula.getData_termino());
+            stmt.setInt(3, id_curso);
+            stmt.setInt(4, RA);
             stmt.executeUpdate();
 
             ResultSet rs = stmt.getGeneratedKeys();
@@ -47,15 +49,35 @@ public class MatriculaV4DAO {
 
         return id_matricula;
     }
+    
+    
+      public MatriculaV4 buscarPorId(int idMatricula) throws SQLException {
+        String sql = "SELECT * FROM MatriculaV4 WHERE id_matricula = ?";
+        PreparedStatement stmt = this.conn.prepareStatement(sql);
+        stmt.setInt(1, idMatricula);
+        ResultSet rs = stmt.executeQuery();
 
-    public void atualizar(MatriculaV4 matricula) {
-        String sql = "INSERT INTO MatriculaV4(data_efetivacao,"
-                + " data_termino) VALUES (?, ?)";
-        int id_matricula = -1;
+        if (rs.next()) {
+            MatriculaV4 matricula = new MatriculaV4();
+            matricula.setId_matricula(rs.getInt("id_matricula"));
+            matricula.setData_efetivacao(rs.getString("data_efetivacao"));
+            matricula.setData_termino(rs.getString("data_termino"));
+            return matricula;
+        }
+
+        return null;
+    }
+
+    public void atualizar(MatriculaV4 matricula, int id_curso, int RA) {
+         String sql = "UPDATE MatriculaV4 SET data_efetivacao = ?,"
+                 + " data_termino = ?, id_curso = ?, RA = ? WHERE id_matricula = ?";
         try {
-            PreparedStatement stmt = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stmt = this.conn.prepareStatement(sql);
             stmt.setString(1, matricula.getData_efetivacao());
             stmt.setString(2, matricula.getData_termino());
+            stmt.setInt(3, id_curso);
+            stmt.setInt(4, RA);
+            stmt.setInt(5, matricula.getId_matricula());
             stmt.executeUpdate();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao atualizar matrícula: " + e.getMessage());

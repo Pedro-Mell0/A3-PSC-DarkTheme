@@ -4,13 +4,16 @@
      */
     package beans;
 
+import javax.swing.JOptionPane;
+
     /**
      *
      * @author pedro
      */
     public class AlunoV4 {
 
-   
+
+        private int id_curso; 
         private int RA;
         private String Nome_aluno;
         private String Data_nascimento_aluno;
@@ -18,8 +21,64 @@
         private String Telefone_aluno;
         private String Email_aluno;
         private String Endereco_aluno;
+        private String Senha_aluno;
+        private String Presenca;
+        private String Nota_A1;   
+        private String Nota_A2;
+        private String Nota_A3;
         
         
+
+        
+        public String getNota_A1() {
+        return Nota_A1;
+        }
+
+        public void setNota_A1(String Nota_A1) {
+        this.Nota_A1 = Nota_A1;
+        }
+
+        public String getNota_A2() {
+        return Nota_A2;
+        }
+
+        public void setNota_A2(String Nota_A2) {
+        this.Nota_A2 = Nota_A2;
+        }
+
+        public String getNota_A3() {
+        return Nota_A3;
+        }
+
+        public void setNota_A3(String Nota_A3) {
+        this.Nota_A3 = Nota_A3;
+        }
+        
+        
+        public String getPresenca() {
+        return Presenca;
+        }
+
+        public void setPresenca(String Presenca) {
+        this.Presenca = Presenca;
+        }
+        
+        public String getSenha_aluno() {
+        return Senha_aluno;
+        }
+
+        public void setSenha_aluno(String Senha) {
+        this.Senha_aluno = Senha;
+        }
+        
+        
+        public int getId_curso() {
+        return id_curso;
+        }
+
+        public void setId_curso(int id_curso) {
+        this.id_curso = id_curso;
+        }
          
         public int getRA() {
         return RA;
@@ -41,8 +100,8 @@
             return Data_nascimento_aluno;
         }
 
-        public void setData_nascimento_aluno(String data_dascimento_aluno) {
-            this.Data_nascimento_aluno = data_dascimento_aluno;
+        public void setData_nascimento_aluno(String data_nascimento_aluno) {
+            this.Data_nascimento_aluno = data_nascimento_aluno;
         }
 
         public String getNome_responsavel_aluno() {

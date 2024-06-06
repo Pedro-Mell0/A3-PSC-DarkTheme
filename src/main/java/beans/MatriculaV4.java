@@ -10,14 +10,33 @@ package beans;
  */
 public class MatriculaV4 {
 
+    
+
+    private int RA;
+    private int id_curso;
     private int id_matricula;
     private String data_efetivacao;
     private String data_termino;
 
+    public int getRA() {
+        return RA;
+    }
+
+    public void setRA(int RA) {
+        this.RA = RA;
+    }
+    
     public int getId_matricula() {
         return id_matricula;
     }
+    public int getId_curso() {
+        return id_curso;
+    }
 
+    public void setId_curso(int id_curso) {
+        this.id_curso = id_curso;
+    }
+    
     public void setId_matricula(int id_matricula) {
         this.id_matricula = id_matricula;
     }

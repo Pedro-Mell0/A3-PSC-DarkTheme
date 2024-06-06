@@ -3,26 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Forms;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
+import beans.AlunoV4;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import com.mycompany.db.ConnectionFactory;
 import beans.MensalidadeV4;
+import dao.AlunoV4DAO;
 import dao.MensalidadeV4DAO;
+import java.util.ArrayList;
 
 
 /**
  *
  * @author pedro
  */
-public class FormsMensalidadeV4 extends javax.swing.JFrame {
+public class FormMensalidadeV4 extends javax.swing.JFrame {
 
     /**
      * Creates new form MensalidadeV4
      */
-    public FormsMensalidadeV4() {
+    public FormMensalidadeV4() {
         initComponents();
+       this.setSize(500,480);
+       this.setLocationRelativeTo(null);
     }
 
     /**
@@ -44,10 +47,12 @@ public class FormsMensalidadeV4 extends javax.swing.JFrame {
         Label_DataVencimento = new javax.swing.JLabel();
         Label_DataPagamento = new javax.swing.JLabel();
         Label_DataEmissao = new javax.swing.JLabel();
-        txt_MENSALIDADE = new javax.swing.JTextField();
+        Label_DataEmissao1 = new javax.swing.JLabel();
+        ComboBox_Aluno = new javax.swing.JComboBox<>();
         btn_Atualizar = new javax.swing.JToggleButton();
         btn_Inserir = new javax.swing.JToggleButton();
         btn_Deletar = new javax.swing.JToggleButton();
+        btn_Voltar = new javax.swing.JToggleButton();
 
         txt_ALUNO.setEditable(false);
         txt_ALUNO.setBackground(new java.awt.Color(230, 230, 230));
@@ -63,7 +68,7 @@ public class FormsMensalidadeV4 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Mensalidade", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
 
         txt_Valor.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txt_Valor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -117,30 +122,90 @@ public class FormsMensalidadeV4 extends javax.swing.JFrame {
         Label_DataEmissao.setText("Data de Emissão:");
         Label_DataEmissao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+        Label_DataEmissao1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Label_DataEmissao1.setText("Aluno:");
+        Label_DataEmissao1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        ComboBox_Aluno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboBox_Aluno.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                ComboBox_AlunoAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        btn_Atualizar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        btn_Atualizar.setText("ATUALIZAR");
+        btn_Atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AtualizarActionPerformed(evt);
+            }
+        });
+
+        btn_Inserir.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        btn_Inserir.setText("INSERIR");
+        btn_Inserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_InserirActionPerformed(evt);
+            }
+        });
+
+        btn_Deletar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        btn_Deletar.setText("DELETAR");
+        btn_Deletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DeletarActionPerformed(evt);
+            }
+        });
+
+        btn_Voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        btn_Voltar.setText("< VOLTAR");
+        btn_Voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_VoltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(Label_DataEmissao1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(ComboBox_Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(Label_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txt_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(Label_DataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txt_DataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(Label_DataPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txt_DataPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(Label_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txt_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Label_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Label_DataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_DataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Label_DataPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_DataPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Label_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btn_Inserir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_Atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_Deletar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_Voltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,76 +226,35 @@ public class FormsMensalidadeV4 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Label_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Label_DataEmissao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ComboBox_Aluno, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
-
-        txt_MENSALIDADE.setEditable(false);
-        txt_MENSALIDADE.setBackground(new java.awt.Color(230, 230, 230));
-        txt_MENSALIDADE.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
-        txt_MENSALIDADE.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_MENSALIDADE.setText("MENSALIDADE");
-        txt_MENSALIDADE.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txt_MENSALIDADE.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_MENSALIDADEActionPerformed(evt);
-            }
-        });
-
-        btn_Atualizar.setText("ATUALIZAR");
-        btn_Atualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_AtualizarActionPerformed(evt);
-            }
-        });
-
-        btn_Inserir.setText("INSERIR");
-        btn_Inserir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_InserirActionPerformed(evt);
-            }
-        });
-
-        btn_Deletar.setText("DELETAR");
-        btn_Deletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_DeletarActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(71, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(157, 157, 157))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(txt_MENSALIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(213, 213, 213))))
+                .addGap(25, 25, 25)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(txt_MENSALIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
         pack();
@@ -256,44 +280,62 @@ public class FormsMensalidadeV4 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_ALUNOActionPerformed
 
-    private void txt_MENSALIDADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_MENSALIDADEActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_MENSALIDADEActionPerformed
-
     private void btn_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtualizarActionPerformed
         // TODO add your handling code here:
-        String Valor = txt_Valor.getText();
-        String dataVencimento = txt_DataVencimento.getText();
-        String dataEmissao = txt_DataEmissao.getText();
-        String dataPagamento = txt_DataPagamento.getText();
-       
+       String idMensalidadeStr = JOptionPane.showInputDialog(this, "Informe o ID da mensalidade a ser atualizada:");
+if (idMensalidadeStr == null || idMensalidadeStr.isEmpty()) {
+    return;  // Se o usuário cancelar ou não fornecer o ID, interromper a operação
+}
 
-        MensalidadeV4 mensalidade = new MensalidadeV4();
-        mensalidade.setData_emissao(dataEmissao);
-        mensalidade.setData_pagamento(dataPagamento);
-        mensalidade.setData_vencimento(dataVencimento);
-        mensalidade.setValor(Valor);
+try {
+    int idMensalidade = Integer.parseInt(idMensalidadeStr);
+    MensalidadeV4DAO dao = new MensalidadeV4DAO();
+    MensalidadeV4 mensalidade = dao.buscarPorId(idMensalidade);
 
-        try {
-            MensalidadeV4DAO dao = new MensalidadeV4DAO();
-            dao.atualizar(mensalidade);
-            JOptionPane.showMessageDialog(this, "Mensalidade atualizado com sucesso!");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Erro ao atualizar Mensalidade.");
-        }
+    if (mensalidade == null) {
+        JOptionPane.showMessageDialog(this, "Mensalidade não encontrada");
+        return;
+    }
 
+    // Solicitar novas informações
+    String dataEmissao = JOptionPane.showInputDialog(this, "Data de Emissão:", mensalidade.getData_emissao());
+    String dataVencimento = JOptionPane.showInputDialog(this, "Data de Vencimento:", mensalidade.getData_vencimento());
+    String dataPagamento = JOptionPane.showInputDialog(this, "Data de Pagamento:", mensalidade.getData_pagamento());
+    String valor = JOptionPane.showInputDialog(this, "Valor:", mensalidade.getValor());
+
+    // Verifique se o ComboBox_Aluno está acessível e obtem o RA do aluno
+    int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
+
+    // Atualizar o objeto mensalidade com novas informações
+    mensalidade.setData_emissao(dataEmissao);
+    mensalidade.setData_vencimento(dataVencimento);
+    mensalidade.setData_pagamento(dataPagamento);
+    mensalidade.setValor(valor);
+    mensalidade.setRA(raAlunoSelecionado); // Não esquecer de atualizar o RA
+
+    // Atualizar no banco de dados
+    dao.atualizar(mensalidade, raAlunoSelecionado);
+    JOptionPane.showMessageDialog(this, "Mensalidade atualizada com sucesso!");
+
+} catch (NumberFormatException e) {
+    JOptionPane.showMessageDialog(this, "ID da mensalidade inválido");
+} catch (SQLException ex) {
+    ex.printStackTrace();
+    JOptionPane.showMessageDialog(this, "Erro ao atualizar mensalidade.");
+}
     }//GEN-LAST:event_btn_AtualizarActionPerformed
 
     private void btn_InserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InserirActionPerformed
         // TODO add your handling code here:
-        String Valor = txt_Valor.getText();
+        String Valor = txt_Valor.getText(); 
         String dataVencimento = txt_DataVencimento.getText();
         String dataEmissao = txt_DataEmissao.getText();
         String dataPagamento = txt_DataPagamento.getText();
 
-        MensalidadeV4 mensalidade = new MensalidadeV4();
+         // Obtendo o ID do curso selecionado na Combo Box
+         int raAlunoSelecionado = ComboBox_Aluno.getSelectedIndex() + 1;
         
+        MensalidadeV4 mensalidade = new MensalidadeV4();
         mensalidade.setData_emissao(dataEmissao);
         mensalidade.setData_pagamento(dataPagamento);
         mensalidade.setData_vencimento(dataVencimento);
@@ -301,7 +343,7 @@ public class FormsMensalidadeV4 extends javax.swing.JFrame {
 
         try {
             MensalidadeV4DAO dao = new MensalidadeV4DAO();
-            dao.inserir(mensalidade);
+            dao.inserir(mensalidade, raAlunoSelecionado);
             JOptionPane.showMessageDialog(this, "Mensalidade inserido com sucesso!");
         }catch (SQLException ex) {
             ex.printStackTrace();
@@ -330,6 +372,32 @@ public class FormsMensalidadeV4 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "ID não inserido.");
         }
     }//GEN-LAST:event_btn_DeletarActionPerformed
+
+    private void ComboBox_AlunoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_AlunoAncestorAdded
+        // TODO add your handling code here:
+           try {
+    AlunoV4DAO dao = new AlunoV4DAO();
+    ArrayList<AlunoV4> lista = dao.listarRA();
+    
+    ComboBox_Aluno.removeAllItems();
+    
+    for(AlunoV4 c : lista){
+        ComboBox_Aluno.addItem(c.getNome_aluno());
+    }
+} catch (SQLException ex) {
+    ex.printStackTrace(); // Print the stack trace to see the details of the exception
+    // Handle the exception as per your application's requirements
+
+    }      
+        
+    }//GEN-LAST:event_ComboBox_AlunoAncestorAdded
+
+    private void btn_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VoltarActionPerformed
+        // TODO add your handling code here:
+         FormEditor Editor = new FormEditor();
+    Editor.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_btn_VoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -361,25 +429,27 @@ public class FormsMensalidadeV4 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormsMensalidadeV4().setVisible(true);
+                new FormMensalidadeV4().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ComboBox_Aluno;
     private javax.swing.JLabel Label_DataEmissao;
+    private javax.swing.JLabel Label_DataEmissao1;
     private javax.swing.JLabel Label_DataPagamento;
     private javax.swing.JLabel Label_DataVencimento;
     private javax.swing.JLabel Label_Valor;
     private javax.swing.JToggleButton btn_Atualizar;
     private javax.swing.JToggleButton btn_Deletar;
     private javax.swing.JToggleButton btn_Inserir;
+    private javax.swing.JToggleButton btn_Voltar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_ALUNO;
     private javax.swing.JTextField txt_DataEmissao;
     private javax.swing.JTextField txt_DataPagamento;
     private javax.swing.JTextField txt_DataVencimento;
-    private javax.swing.JTextField txt_MENSALIDADE;
     private javax.swing.JTextField txt_Valor;
     // End of variables declaration//GEN-END:variables
 }

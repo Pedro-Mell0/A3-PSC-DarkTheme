@@ -10,8 +10,8 @@ package beans;
  */
 public class MensalidadeV4 {
     
-    
-    private String id_mensalidade;
+    private int RA;
+    private int id_mensalidade;
     private String data_emissao;
     private String data_vencimento;
     private String data_pagamento;
@@ -19,12 +19,20 @@ public class MensalidadeV4 {
     
     
     
-    public String getId_mensalidade() {
+    public int getId_mensalidade() {
         return id_mensalidade;
     }
 
-    public void setId_mensalidade(String id_mensalidade) {
+    public void setId_mensalidade(int id_mensalidade) {
         this.id_mensalidade = id_mensalidade;
+    }
+    
+    public int getRA() {
+        return RA;
+    }
+
+    public void setRA(int RA) {
+        this.RA = RA;
     }
 
     public String getData_emissao() {
@@ -58,12 +66,6 @@ public class MensalidadeV4 {
     public void setValor(String valor) {
         this.valor = valor;
     }
-    
-    
-   
-    
-    
-    
     
 
 }

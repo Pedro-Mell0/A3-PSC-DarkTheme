@@ -27,9 +27,9 @@ public class MensalidadeV4DAO {
         this.conn = this.conexao.obtemConexao();
     }
     
-     public int inserir(MensalidadeV4 mensalidade) {
+     public int inserir(MensalidadeV4 mensalidade, int RA) {
         String sql = "INSERT INTO MensalidadeV4(data_emissao,"
-                + " data_vencimento, data_pagamento, valor) VALUES (?, ?, ?, ?)";
+                + " data_vencimento, data_pagamento, valor, RA) VALUES (?, ?, ?, ?, ?)";
         int id_mensalidade = -1;
         try {
             PreparedStatement stmt = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -37,6 +37,7 @@ public class MensalidadeV4DAO {
             stmt.setString(2, mensalidade.getData_vencimento());
             stmt.setString(3, mensalidade.getData_pagamento());
             stmt.setString(4, mensalidade.getValor());
+            stmt.setInt(5, RA);
             stmt.executeUpdate();
 
             ResultSet rs = stmt.getGeneratedKeys();
@@ -50,23 +51,42 @@ public class MensalidadeV4DAO {
         return id_mensalidade;
     }
      
+     public void atualizar(MensalidadeV4 mensalidade, int RA) {
+      String sql = "UPDATE MensalidadeV4 SET data_emissao = ?, data_vencimento = ?, data_pagamento = ?, valor = ?, RA = ? WHERE id_mensalidade = ?"; 
+      try{
+          PreparedStatement stmt = this.conn.prepareStatement(sql);
+          stmt.setString(1, mensalidade.getData_emissao());     
+          stmt.setString(3, mensalidade.getData_vencimento());
+          stmt.setString(2, mensalidade.getData_pagamento());
+          stmt.setString(4, mensalidade.getValor());
+          stmt.setInt(5, RA);
+          stmt.setInt(6, mensalidade.getId_mensalidade());
+          stmt.executeUpdate();
+      
+     }catch (Exception e) {
+         JOptionPane.showMessageDialog(null, "Erro ao atualizar mensalidade " + e.getMessage());
+     }
+}
      
-     public void atualizar(MensalidadeV4 mensalidade) {
-        String sql = "INSERT INTO MatriculaV4(data_efetivacao,"
-                + " data_termino) VALUES (?, ?)";
-        int id_matricula = -1;
-        try {
-            PreparedStatement stmt = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, mensalidade.getData_emissao());
-            stmt.setString(2, mensalidade.getData_vencimento());
-            stmt.setString(3, mensalidade.getData_pagamento());
-            stmt.setString(4, mensalidade.getValor());
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar mensalidade: " + e.getMessage());
+     public MensalidadeV4 buscarPorId(int idMensalidade) throws SQLException {
+        String sql = "SELECT * FROM MensalidadeV4 WHERE id_mensalidade = ?";
+        PreparedStatement stmt = this.conn.prepareStatement(sql);
+        stmt.setInt(1, idMensalidade);
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            MensalidadeV4 mensalidade = new MensalidadeV4();
+            mensalidade.setId_mensalidade(rs.getInt("id_mensalidade"));
+            mensalidade.setData_emissao(rs.getString("data_emissao"));
+            mensalidade.setData_vencimento(rs.getString("data_vencimento"));
+            mensalidade.setData_pagamento(rs.getString("data_pagamento"));
+            mensalidade.setValor(rs.getString("valor"));
+            return mensalidade;
         }
+
+        return null;
     }
-     
+    
      
      
      public void deletar(int id_mensalidade) {
@@ -75,8 +95,8 @@ public class MensalidadeV4DAO {
             PreparedStatement stmt = this.conn.prepareStatement(sql);
             stmt.setInt(1, id_mensalidade);
             stmt.executeUpdate();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao deletar mensalidade: " + e.getMessage());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao deletar mensalidade: " + ex.getMessage());
         }
 
     }

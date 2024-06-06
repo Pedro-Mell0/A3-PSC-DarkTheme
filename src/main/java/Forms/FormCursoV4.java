@@ -20,6 +20,8 @@ public class FormCursoV4 extends javax.swing.JFrame {
      */
     public FormCursoV4() {
         initComponents();
+        this.setSize(200,271);
+        this.setLocationRelativeTo(null);
     }
 
    
@@ -28,7 +30,6 @@ public class FormCursoV4 extends javax.swing.JFrame {
     private void initComponents() {
 
         Main_Frame = new javax.swing.JPanel();
-        txt_AttCursos = new javax.swing.JTextField();
         txt_Carga_Horaria = new javax.swing.JTextField();
         txt_Nome_Curso = new javax.swing.JTextField();
         btn_Atualizar = new javax.swing.JToggleButton();
@@ -36,25 +37,14 @@ public class FormCursoV4 extends javax.swing.JFrame {
         btn_Inserir = new javax.swing.JToggleButton();
         txt_Nome_Do_Curso = new javax.swing.JTextField();
         txt_Carga_Horaria_Curso = new javax.swing.JTextField();
+        btn_voltar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cursos Fundação Arte&Cultura");
         setMinimumSize(new java.awt.Dimension(750, 500));
         getContentPane().setLayout(null);
 
-        Main_Frame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        txt_AttCursos.setEditable(false);
-        txt_AttCursos.setBackground(new java.awt.Color(230, 230, 230));
-        txt_AttCursos.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
-        txt_AttCursos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_AttCursos.setText("CURSOS");
-        txt_AttCursos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txt_AttCursos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_AttCursosActionPerformed(evt);
-            }
-        });
+        Main_Frame.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "CURSOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
 
         txt_Carga_Horaria.setEditable(false);
         txt_Carga_Horaria.setBackground(new java.awt.Color(230, 230, 230));
@@ -70,7 +60,7 @@ public class FormCursoV4 extends javax.swing.JFrame {
         txt_Nome_Curso.setText("Nome do curso");
         txt_Nome_Curso.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btn_Atualizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_Atualizar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
         btn_Atualizar.setText("ATUALIZAR");
         btn_Atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +68,7 @@ public class FormCursoV4 extends javax.swing.JFrame {
             }
         });
 
-        btn_Deletar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_Deletar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
         btn_Deletar.setText("DELETAR");
         btn_Deletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +76,7 @@ public class FormCursoV4 extends javax.swing.JFrame {
             }
         });
 
-        btn_Inserir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_Inserir.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
         btn_Inserir.setText("INSERIR");
         btn_Inserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +92,14 @@ public class FormCursoV4 extends javax.swing.JFrame {
         });
 
         txt_Carga_Horaria_Curso.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btn_voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_voltar.setText("< Voltar");
+        btn_voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_voltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Main_FrameLayout = new javax.swing.GroupLayout(Main_Frame);
         Main_Frame.setLayout(Main_FrameLayout);
@@ -121,18 +119,20 @@ public class FormCursoV4 extends javax.swing.JFrame {
                     .addGroup(Main_FrameLayout.createSequentialGroup()
                         .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txt_AttCursos))
+                        .addGroup(Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Main_FrameLayout.createSequentialGroup()
+                                .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(Main_FrameLayout.createSequentialGroup()
+                                .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(37, 37, 37))
         );
         Main_FrameLayout.setVerticalGroup(
             Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Main_FrameLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txt_AttCursos, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_Carga_Horaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_Nome_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -145,11 +145,13 @@ public class FormCursoV4 extends javax.swing.JFrame {
                     .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(73, 73, 73))
+                .addGap(18, 18, 18)
+                .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         getContentPane().add(Main_Frame);
-        Main_Frame.setBounds(90, 60, 563, 351);
+        Main_Frame.setBounds(10, 10, 569, 270);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -179,41 +181,69 @@ public class FormCursoV4 extends javax.swing.JFrame {
 
     private void btn_DeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DeletarActionPerformed
         // TODO add your handling code here:
-        String nomeCurso = txt_Nome_Do_Curso.getText();
+        String idCurso = JOptionPane.showInputDialog(this, "Insira o ID do curso a ser deletado:");
 
+        if (idCurso != null && !idCurso.trim().isEmpty()) {
         try {
             CursoV4DAO dao = new CursoV4DAO();
-            dao.deletar(nomeCurso);
+            int ra = Integer.parseInt(idCurso.trim()); // Converte o ID para inteiro
+            dao.deletar(idCurso); // Assume que o método deletar no DAO aceita um ID como inteiro
             JOptionPane.showMessageDialog(this, "Curso deletado com sucesso!");
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "ID inválido. Insira um número válido.");
         } catch (SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Erro ao deletar curso.");
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "ID não inserido.");
         }
     }//GEN-LAST:event_btn_DeletarActionPerformed
 
     private void btn_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtualizarActionPerformed
         // TODO add your handling code here:
-        String nomeCurso = txt_Nome_Do_Curso.getText();
-        String cargaHoraria = txt_Carga_Horaria_Curso.getText();
+       String idCursoStr = JOptionPane.showInputDialog(this, "Informe o ID do curso a ser atualizado:");
+    if (idCursoStr == null || idCursoStr.isEmpty()) {
+        return; // Se o usuário cancelar ou não fornecer o ID, interromper a operação
+    }
 
-        CursoV4 curso = new CursoV4();
+    try {
+        int idCurso = Integer.parseInt(idCursoStr);
+        CursoV4DAO dao = new CursoV4DAO();
+        CursoV4 curso = dao.buscarPorId(idCurso);
+
+        if (curso == null) {
+            JOptionPane.showMessageDialog(this, "Curso não encontrado.");
+            return;
+        }
+
+        // Solicitar novas informações
+        String nomeCurso = JOptionPane.showInputDialog(this, "Nome do curso:", curso.getNome_curso());
+        String cargaHoraria = JOptionPane.showInputDialog(this, "Carga Horária do curso:", curso.getCarga_horaria_curso());
+
+        // Atualizar o objeto curso com novas informações
         curso.setNome_curso(nomeCurso);
         curso.setCarga_horaria_curso(cargaHoraria);
 
-        try {
-            CursoV4DAO dao = new CursoV4DAO();
-            dao.atualizar(curso);
-            JOptionPane.showMessageDialog(this, "Curso atualizado com sucesso!");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Erro ao atualizar curso.");
+        // Atualizar no banco de dados
+        dao.atualizar(curso);
+        JOptionPane.showMessageDialog(this, "Curso atualizado com sucesso!");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "ID do curso inválido.");
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Erro ao atualizar curso.");
         }
 
     }//GEN-LAST:event_btn_AtualizarActionPerformed
 
-    private void txt_AttCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_AttCursosActionPerformed
+    private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_AttCursosActionPerformed
+         FormEditor Editor = new FormEditor();
+    Editor.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_btn_voltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,7 +285,7 @@ public class FormCursoV4 extends javax.swing.JFrame {
     private javax.swing.JToggleButton btn_Atualizar;
     private javax.swing.JToggleButton btn_Deletar;
     private javax.swing.JToggleButton btn_Inserir;
-    private javax.swing.JTextField txt_AttCursos;
+    private javax.swing.JToggleButton btn_voltar;
     private javax.swing.JTextField txt_Carga_Horaria;
     private javax.swing.JTextField txt_Carga_Horaria_Curso;
     private javax.swing.JTextField txt_Nome_Curso;

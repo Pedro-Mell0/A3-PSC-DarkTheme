@@ -4,11 +4,14 @@
  */
 package Forms;
 
+import beans.CursoV4;
 import beans.ProfessorV4;
+import dao.CursoV4DAO;
 import dao.ProfessorV4DAO;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
+    
 /**
  *
  * @author pedro
@@ -20,7 +23,10 @@ public class FormProfessorV4 extends javax.swing.JFrame {
      */
     public FormProfessorV4() {
         initComponents();
+        this.setSize(500,530);
+        this.setLocationRelativeTo(null);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,10 +37,8 @@ public class FormProfessorV4 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txt_PROFESSOR = new javax.swing.JTextField();
         btn_Atualizar = new javax.swing.JToggleButton();
         btn_Inserir = new javax.swing.JToggleButton();
-        btn_Deletar = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         txt_Nome = new javax.swing.JTextField();
         txt_email = new javax.swing.JTextField();
@@ -43,22 +47,16 @@ public class FormProfessorV4 extends javax.swing.JFrame {
         Label_Nome = new javax.swing.JLabel();
         Label_Email = new javax.swing.JLabel();
         Label_Telefone = new javax.swing.JLabel();
-        Label_Endereco = new javax.swing.JLabel();
+        Label_Curso = new javax.swing.JLabel();
+        Label_Endereco1 = new javax.swing.JLabel();
+        ComboBox_Curso = new javax.swing.JComboBox();
+        Label_Senha = new javax.swing.JLabel();
+        txt_Senha = new javax.swing.JTextField();
+        btn_voltar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txt_PROFESSOR.setEditable(false);
-        txt_PROFESSOR.setBackground(new java.awt.Color(230, 230, 230));
-        txt_PROFESSOR.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
-        txt_PROFESSOR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_PROFESSOR.setText("PROFESSOR");
-        txt_PROFESSOR.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txt_PROFESSOR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_PROFESSORActionPerformed(evt);
-            }
-        });
-
+        btn_Atualizar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         btn_Atualizar.setText("ATUALIZAR");
         btn_Atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +64,7 @@ public class FormProfessorV4 extends javax.swing.JFrame {
             }
         });
 
+        btn_Inserir.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         btn_Inserir.setText("INSERIR");
         btn_Inserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,14 +72,7 @@ public class FormProfessorV4 extends javax.swing.JFrame {
             }
         });
 
-        btn_Deletar.setText("DELETAR");
-        btn_Deletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_DeletarActionPerformed(evt);
-            }
-        });
-
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Professor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
 
         txt_Nome.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txt_Nome.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -130,9 +122,43 @@ public class FormProfessorV4 extends javax.swing.JFrame {
         Label_Telefone.setText("Telefone:");
         Label_Telefone.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        Label_Endereco.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_Endereco.setText("Endereço");
-        Label_Endereco.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        Label_Curso.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Label_Curso.setText("Curso:");
+        Label_Curso.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        Label_Endereco1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Label_Endereco1.setText("Endereço:");
+        Label_Endereco1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        ComboBox_Curso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboBox_Curso.setMinimumSize(new java.awt.Dimension(62, 30));
+        ComboBox_Curso.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                ComboBox_CursoAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        ComboBox_Curso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBox_CursoActionPerformed(evt);
+            }
+        });
+
+        Label_Senha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Label_Senha.setText("Senha:");
+        Label_Senha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        txt_Senha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_Senha.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_Senha.setMinimumSize(new java.awt.Dimension(30, 40));
+        txt_Senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_SenhaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,10 +180,18 @@ public class FormProfessorV4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Label_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Label_Endereco1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, Short.MAX_VALUE))
+                        .addComponent(txt_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Label_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Label_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ComboBox_Curso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(12, 12, 12))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,77 +211,108 @@ public class FormProfessorV4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(Label_Endereco1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Label_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComboBox_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Label_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
         );
+
+        btn_voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_voltar.setText("< VOLTAR");
+        btn_voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_voltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(55, 55, 55))
             .addGroup(layout.createSequentialGroup()
-                .addGap(227, 227, 227)
-                .addComponent(txt_PROFESSOR, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(148, 148, 148))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(txt_PROFESSOR, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(98, Short.MAX_VALUE))
+                    .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_PROFESSORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_PROFESSORActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_PROFESSORActionPerformed
-
     private void btn_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtualizarActionPerformed
         // TODO add your handling code here:
-        String nomeProfessor = txt_Nome.getText();
-        String emailProfessor = txt_email.getText();
-        String enderecoProfessor = txt_Endereco.getText();
-        String telefoneProfessor = txt_Telefone.getText();
-      
+         String idProfessorStr = JOptionPane.showInputDialog(this, "Informe o ID do professor a ser atualizado:");
+    if (idProfessorStr == null || idProfessorStr.isEmpty()) {
+        return; // Se o usuário cancelar ou não fornecer o ID, interromper a operação
+    }
 
-        ProfessorV4 professor = new ProfessorV4();
-        professor.setNome_professor(nomeProfessor);
-        professor.setEmail_professor(emailProfessor);
-        professor.setTelefone_professor(telefoneProfessor);
-        professor.setEndereco_professor(enderecoProfessor);
+    try {
+        int idProfessor = Integer.parseInt(idProfessorStr);
+        ProfessorV4DAO dao = new ProfessorV4DAO();
+        ProfessorV4 professor = dao.buscarPorId(idProfessor);
 
-        try {   
-            ProfessorV4DAO dao = new ProfessorV4DAO();
-            dao.atualizar(professor);
-            JOptionPane.showMessageDialog(this, "Professor atualizado com sucesso!");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Erro ao atualizar Professor.");
+        if (professor == null) {
+            JOptionPane.showMessageDialog(this, "Professor não encontrado.");
+            return;
         }
 
+        // Solicitar novas informações
+        String nomeProfessor = JOptionPane.showInputDialog(this, "Nome do Professor:", professor.getNome_professor());
+        String telefoneProfessor = JOptionPane.showInputDialog(this, "Telefone do Professor:", professor.getTelefone_professor());
+        String emailProfessor = JOptionPane.showInputDialog(this, "Email do Professor:", professor.getEmail_professor());
+        String enderecoProfessor = JOptionPane.showInputDialog(this, "Endereço do Professor:", professor.getEndereco_professor());
+        String senhaProfessor = JOptionPane.showInputDialog(this, "Senha:", professor.getSenha_professor());
+        
+        
+         // Obtendo o ID do curso selecionado na Combo Box
+        int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
+
+        // Atualizar o objeto professor com novas informações
+        professor.setNome_professor(nomeProfessor);
+        professor.setTelefone_professor(telefoneProfessor);
+        professor.setEmail_professor(emailProfessor);
+        professor.setEndereco_professor(enderecoProfessor);
+        professor.setSenha_professor(senhaProfessor);
+        
+
+        // Atualizar no banco de dados
+        dao.atualizar(professor, idCursoSelecionado);
+        JOptionPane.showMessageDialog(this, "Professor atualizado com sucesso!");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "ID do professor inválido.");
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Erro ao atualizar professor.");
+    }
     }//GEN-LAST:event_btn_AtualizarActionPerformed
 
     private void btn_InserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InserirActionPerformed
@@ -256,45 +321,27 @@ public class FormProfessorV4 extends javax.swing.JFrame {
         String emailProfessor = txt_email.getText();
         String enderecoProfessor = txt_Endereco.getText();
         String telefoneProfessor = txt_Telefone.getText();
-      
+        String senhaProfessor = txt_Senha.getText();
+        
+        // Obtendo o ID do curso selecionado na Combo Box
+    int idCursoSelecionado = ComboBox_Curso.getSelectedIndex() + 1;
 
         ProfessorV4 professor = new ProfessorV4();
         professor.setNome_professor(nomeProfessor);
         professor.setEmail_professor(emailProfessor);
         professor.setTelefone_professor(telefoneProfessor);
         professor.setEndereco_professor(enderecoProfessor);
+        professor.setSenha_professor(senhaProfessor);
 
         try {
             ProfessorV4DAO dao = new ProfessorV4DAO();
-            dao.inserir(professor);
+            dao.inserir(professor, idCursoSelecionado);
             JOptionPane.showMessageDialog(this, "Professor inserido com sucesso!");
         }catch (SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Erro ao inserir Professor.");
         }
     }//GEN-LAST:event_btn_InserirActionPerformed
-
-    private void btn_DeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DeletarActionPerformed
-        // TODO add your handling code here:
-        String idProfessor = JOptionPane.showInputDialog(this, "Insira o ID do professor a ser deletado:");
-
-        // Verifica se um valor foi inserido
-        if (idProfessor != null && !idProfessor.trim().isEmpty()) {
-            try {
-                ProfessorV4DAO dao = new ProfessorV4DAO();
-                int ID = Integer.parseInt(idProfessor.trim()); // Converte o ID para inteiro
-                dao.deletar(ID); // Assume que o método deletar no DAO aceita um ID como inteiro
-                JOptionPane.showMessageDialog(this, "Professor deletado com sucesso!");
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "ID inválido. Insira um número válido.");
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Erro ao deletar professor.");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "ID não inserido.");
-        }
-    }//GEN-LAST:event_btn_DeletarActionPerformed
 
     private void txt_NomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_NomeActionPerformed
         // TODO add your handling code here:
@@ -311,6 +358,43 @@ public class FormProfessorV4 extends javax.swing.JFrame {
     private void txt_EnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_EnderecoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_EnderecoActionPerformed
+
+    private void ComboBox_CursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBox_CursoActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_ComboBox_CursoActionPerformed
+
+    private void ComboBox_CursoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ComboBox_CursoAncestorAdded
+        // TODO add your handling code here:
+        
+      try {
+    CursoV4DAO dao = new CursoV4DAO();
+    ArrayList<CursoV4> lista = dao.listarCursos();
+    
+    ComboBox_Curso.removeAllItems();
+    
+    for(CursoV4 c : lista){
+        ComboBox_Curso.addItem(c.getNome_curso());
+    }
+} catch (SQLException ex) {
+    ex.printStackTrace(); // Print the stack trace to see the details of the exception
+    // Handle the exception as per your application's requirements
+}
+      
+      
+    }//GEN-LAST:event_ComboBox_CursoAncestorAdded
+
+    private void txt_SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_SenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_SenhaActionPerformed
+
+    private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
+        // TODO add your handling code here:
+         FormRegistrar registro = new FormRegistrar();
+    registro.setVisible(true); 
+    this.dispose();
+    }//GEN-LAST:event_btn_voltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,17 +432,20 @@ public class FormProfessorV4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox ComboBox_Curso;
+    private javax.swing.JLabel Label_Curso;
     private javax.swing.JLabel Label_Email;
-    private javax.swing.JLabel Label_Endereco;
+    private javax.swing.JLabel Label_Endereco1;
     private javax.swing.JLabel Label_Nome;
+    private javax.swing.JLabel Label_Senha;
     private javax.swing.JLabel Label_Telefone;
     private javax.swing.JToggleButton btn_Atualizar;
-    private javax.swing.JToggleButton btn_Deletar;
     private javax.swing.JToggleButton btn_Inserir;
+    private javax.swing.JToggleButton btn_voltar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_Endereco;
     private javax.swing.JTextField txt_Nome;
-    private javax.swing.JTextField txt_PROFESSOR;
+    private javax.swing.JTextField txt_Senha;
     private javax.swing.JTextField txt_Telefone;
     private javax.swing.JTextField txt_email;
     // End of variables declaration//GEN-END:variables
