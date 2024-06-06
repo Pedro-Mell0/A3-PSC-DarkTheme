@@ -287,6 +287,7 @@ public class FormNotas extends javax.swing.JFrame {
                 new FormNotas().setVisible(true);
             }
         });
+    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
