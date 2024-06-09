@@ -5,7 +5,7 @@ public class CursoV4 {
     private int id_curso;
     private String nome_curso;
     private String carga_horaria_curso;
-
+  
     public int getId_curso() {
         return id_curso;
     }
