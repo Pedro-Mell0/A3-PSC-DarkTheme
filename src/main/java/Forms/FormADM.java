@@ -18,7 +18,7 @@ public class FormADM extends javax.swing.JFrame {
      */
     public FormADM() {
         initComponents();
-        this.setSize(551, 270);
+        this.setSize(960, 600);
         this.setLocationRelativeTo(null);
     }
 
@@ -31,83 +31,68 @@ public class FormADM extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        Label_Senha = new javax.swing.JLabel();
-        Password = new javax.swing.JPasswordField();
         btn_Avançar = new javax.swing.JButton();
         btn_Voltar = new javax.swing.JButton();
+        Password = new javax.swing.JPasswordField();
+        Label_Senha = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Acesso Restrito", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
-
-        Label_Senha.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        Label_Senha.setText("Senha:");
-        Label_Senha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        btn_Avançar.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        btn_Avançar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Avançar.setForeground(new java.awt.Color(204, 204, 204));
         btn_Avançar.setText("Avançar >");
+        btn_Avançar.setBorder(null);
+        btn_Avançar.setContentAreaFilled(false);
         btn_Avançar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_AvançarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Avançar);
+        btn_Avançar.setBounds(222, 318, 140, 21);
 
-        btn_Voltar.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        btn_Voltar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Voltar.setForeground(new java.awt.Color(204, 204, 204));
         btn_Voltar.setText("< Voltar ");
+        btn_Voltar.setBorder(null);
+        btn_Voltar.setContentAreaFilled(false);
         btn_Voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_VoltarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Voltar);
+        btn_Voltar.setBounds(57, 318, 100, 21);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Label_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_Voltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_Avançar, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Avançar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Voltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(17, 17, 17))
-        );
+        Password.setBackground(new java.awt.Color(3, 16, 50));
+        Password.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Password.setForeground(new java.awt.Color(204, 204, 204));
+        Password.setBorder(null);
+        getContentPane().add(Password);
+        Password.setBounds(170, 250, 170, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        Label_Senha.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Senha.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Senha.setText("Senha:");
+        getContentPane().add(Label_Senha);
+        Label_Senha.setBounds(60, 230, 80, 48);
+
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(23, 27, 80));
+        jTextField1.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(140, 82, 255));
+        jTextField1.setText("Acesso Restrito");
+        jTextField1.setToolTipText("");
+        jTextField1.setBorder(null);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(57, 165, 289, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\ADM.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 960, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -178,6 +163,7 @@ public class FormADM extends javax.swing.JFrame {
     private javax.swing.JPasswordField Password;
     private javax.swing.JButton btn_Avançar;
     private javax.swing.JButton btn_Voltar;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

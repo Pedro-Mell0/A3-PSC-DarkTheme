@@ -15,7 +15,7 @@ public class FormRegistrar extends javax.swing.JFrame {
      */
     public FormRegistrar() {
         initComponents();
-        this.setSize(535, 290);
+        this.setSize(916, 600);
         this.setLocationRelativeTo(null);
     }
 
@@ -28,91 +28,81 @@ public class FormRegistrar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        Label_Registro = new javax.swing.JLabel();
         btn_Aluno = new javax.swing.JToggleButton();
-        btn_Professor = new javax.swing.JToggleButton();
         btn_Menu = new javax.swing.JButton();
+        btn_Professor = new javax.swing.JToggleButton();
+        Label_Roxa = new javax.swing.JLabel();
+        Label_Roxa2 = new javax.swing.JLabel();
+        Label_Roxa3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Bem-Vindo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
-
-        Label_Registro.setFont(new java.awt.Font("Bell MT", 1, 24)); // NOI18N
-        Label_Registro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_Registro.setText("Registrar-se como:");
-        Label_Registro.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        btn_Aluno.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        btn_Aluno.setBackground(new java.awt.Color(102, 51, 255));
+        btn_Aluno.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Aluno.setForeground(new java.awt.Color(204, 204, 204));
         btn_Aluno.setText("Aluno");
+        btn_Aluno.setBorder(null);
+        btn_Aluno.setContentAreaFilled(false);
         btn_Aluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_AlunoActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Aluno);
+        btn_Aluno.setBounds(70, 265, 187, 34);
 
-        btn_Professor.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        btn_Professor.setText("Professor");
-        btn_Professor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ProfessorActionPerformed(evt);
-            }
-        });
-
-        btn_Menu.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Menu.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Menu.setForeground(new java.awt.Color(204, 204, 204));
         btn_Menu.setText("Menu");
+        btn_Menu.setBorder(null);
+        btn_Menu.setContentAreaFilled(false);
         btn_Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_MenuActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Menu);
+        btn_Menu.setBounds(70, 373, 187, 34);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(59, 59, 59)
-                            .addComponent(Label_Registro, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(btn_Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(btn_Professor, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(btn_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(74, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(Label_Registro, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Professor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btn_Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        btn_Professor.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Professor.setForeground(new java.awt.Color(204, 204, 204));
+        btn_Professor.setText("Professor");
+        btn_Professor.setBorder(null);
+        btn_Professor.setContentAreaFilled(false);
+        btn_Professor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ProfessorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Professor);
+        btn_Professor.setBounds(72, 319, 187, 34);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        Label_Roxa.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        Label_Roxa.setForeground(new java.awt.Color(140, 82, 255));
+        Label_Roxa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_Roxa.setText("Bem-vindo!");
+        getContentPane().add(Label_Roxa);
+        Label_Roxa.setBounds(10, 110, 320, 50);
+
+        Label_Roxa2.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        Label_Roxa2.setForeground(new java.awt.Color(66, 135, 156));
+        Label_Roxa2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_Roxa2.setText("como:");
+        getContentPane().add(Label_Roxa2);
+        Label_Roxa2.setBounds(18, 200, 300, 50);
+
+        Label_Roxa3.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        Label_Roxa3.setForeground(new java.awt.Color(66, 135, 156));
+        Label_Roxa3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_Roxa3.setText("Registrar-se");
+        getContentPane().add(Label_Roxa3);
+        Label_Roxa3.setBounds(10, 160, 320, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\Tela Registro.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1070, 570);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -174,10 +164,12 @@ public class FormRegistrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Label_Registro;
+    private javax.swing.JLabel Label_Roxa;
+    private javax.swing.JLabel Label_Roxa2;
+    private javax.swing.JLabel Label_Roxa3;
     private javax.swing.JToggleButton btn_Aluno;
     private javax.swing.JButton btn_Menu;
     private javax.swing.JToggleButton btn_Professor;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

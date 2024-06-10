@@ -21,8 +21,7 @@ public class FormPresenca extends javax.swing.JFrame {
      */
     public FormPresenca() {
         initComponents();
-
-        this.setSize(425, 325);
+this.setSize(960, 600);
         this.setLocationRelativeTo(null);
 
     }
@@ -36,111 +35,91 @@ public class FormPresenca extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        txt_presenca = new javax.swing.JTextField();
+        btn_buscar = new javax.swing.JButton();
+        txt_RA = new javax.swing.JTextField();
         Label_RA = new javax.swing.JLabel();
+        txt_presenca = new javax.swing.JTextField();
         Label_RA1 = new javax.swing.JLabel();
         btn_Voltar = new javax.swing.JButton();
-        txt_RA = new javax.swing.JTextField();
-        btn_buscar = new javax.swing.JButton();
+        Presenças = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Presença", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
-        jPanel1.setPreferredSize(new java.awt.Dimension(400, 250));
-
-        txt_presenca.setEditable(false);
-        txt_presenca.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
-        txt_presenca.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        Label_RA.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        Label_RA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_RA.setText("RA:");
-        Label_RA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Label_RA1.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        Label_RA1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_RA1.setText("Presença:");
-        Label_RA1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        btn_Voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
-        btn_Voltar.setText("< VOLTAR");
-        btn_Voltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_VoltarActionPerformed(evt);
-            }
-        });
-
-        txt_RA.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
-        txt_RA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().setLayout(null);
 
         btn_buscar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_buscar.setForeground(new java.awt.Color(204, 204, 204));
         btn_buscar.setText("Buscar");
+        btn_buscar.setBorder(null);
+        btn_buscar.setContentAreaFilled(false);
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_buscarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_buscar);
+        btn_buscar.setBounds(208, 367, 130, 30);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Label_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Label_RA1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txt_presenca, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txt_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                    .addComponent(txt_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Label_RA1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_presenca, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
+        txt_RA.setBackground(new java.awt.Color(3, 16, 50));
+        txt_RA.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        txt_RA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_RA.setBorder(null);
+        getContentPane().add(txt_RA);
+        txt_RA.setBounds(170, 230, 160, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(62, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
-        );
+        Label_RA.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_RA.setForeground(new java.awt.Color(204, 204, 204));
+        Label_RA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_RA.setText("RA:");
+        getContentPane().add(Label_RA);
+        Label_RA.setBounds(50, 203, 106, 40);
+
+        txt_presenca.setEditable(false);
+        txt_presenca.setBackground(new java.awt.Color(3, 16, 50));
+        txt_presenca.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        txt_presenca.setForeground(new java.awt.Color(204, 204, 204));
+        txt_presenca.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_presenca.setBorder(null);
+        getContentPane().add(txt_presenca);
+        txt_presenca.setBounds(170, 303, 160, 30);
+
+        Label_RA1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_RA1.setForeground(new java.awt.Color(204, 204, 204));
+        Label_RA1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_RA1.setText("Presença:");
+        getContentPane().add(Label_RA1);
+        Label_RA1.setBounds(50, 274, 106, 40);
+
+        btn_Voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Voltar.setForeground(new java.awt.Color(204, 204, 204));
+        btn_Voltar.setText("< VOLTAR");
+        btn_Voltar.setBorder(null);
+        btn_Voltar.setContentAreaFilled(false);
+        btn_Voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_VoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Voltar);
+        btn_Voltar.setBounds(45, 367, 130, 30);
+
+        Presenças.setEditable(false);
+        Presenças.setBackground(new java.awt.Color(23, 27, 80));
+        Presenças.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        Presenças.setForeground(new java.awt.Color(140, 82, 255));
+        Presenças.setText("Presença");
+        Presenças.setBorder(null);
+        Presenças.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PresençasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Presenças);
+        Presenças.setBounds(115, 110, 180, 50);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\Presença.png")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 960, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,6 +162,10 @@ public class FormPresenca extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_buscarActionPerformed
 
+    private void PresençasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresençasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PresençasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -221,9 +204,10 @@ public class FormPresenca extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Label_RA;
     private javax.swing.JLabel Label_RA1;
+    private javax.swing.JTextField Presenças;
     private javax.swing.JButton btn_Voltar;
     private javax.swing.JButton btn_buscar;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txt_RA;
     private javax.swing.JTextField txt_presenca;
     // End of variables declaration//GEN-END:variables

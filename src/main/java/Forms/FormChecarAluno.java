@@ -21,7 +21,7 @@ public class FormChecarAluno extends javax.swing.JFrame {
     public FormChecarAluno() {
         initComponents();
         this.setTitle("Visualizar");
-        this.setSize(322, 325);
+         this.setSize(960, 638);
         this.setLocationRelativeTo(null);
 
     }
@@ -35,79 +35,71 @@ public class FormChecarAluno extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        btn_Menu = new javax.swing.JButton();
         btn_Notas = new javax.swing.JButton();
         btn_presenca = new javax.swing.JButton();
-        btn_Menu = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 14)), "ALUNO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 18))); // NOI18N
-
-        btn_Notas.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
-        btn_Notas.setText("Notas");
-        btn_Notas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_NotasActionPerformed(evt);
-            }
-        });
-
-        btn_presenca.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
-        btn_presenca.setText("Presença");
-        btn_presenca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_presencaActionPerformed(evt);
-            }
-        });
+        getContentPane().setLayout(null);
 
         btn_Menu.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        btn_Menu.setForeground(new java.awt.Color(204, 204, 204));
         btn_Menu.setText("Menu");
+        btn_Menu.setBorder(null);
+        btn_Menu.setContentAreaFilled(false);
         btn_Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_MenuActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Menu);
+        btn_Menu.setBounds(93, 387, 210, 35);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Notas, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_presenca, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(btn_presenca, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(btn_Notas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(btn_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        btn_Notas.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        btn_Notas.setForeground(new java.awt.Color(204, 204, 204));
+        btn_Notas.setText("Notas");
+        btn_Notas.setBorder(null);
+        btn_Notas.setContentAreaFilled(false);
+        btn_Notas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NotasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Notas);
+        btn_Notas.setBounds(93, 315, 210, 35);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
+        btn_presenca.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        btn_presenca.setForeground(new java.awt.Color(204, 204, 204));
+        btn_presenca.setText("Presença");
+        btn_presenca.setBorder(null);
+        btn_presenca.setContentAreaFilled(false);
+        btn_presenca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_presencaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_presenca);
+        btn_presenca.setBounds(93, 242, 210, 35);
+
+        jTextField2.setEditable(false);
+        jTextField2.setBackground(new java.awt.Color(23, 27, 80));
+        jTextField2.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(140, 82, 255));
+        jTextField2.setText("Bem-vindo Aluno");
+        jTextField2.setBorder(null);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(40, 140, 330, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\Visualizar.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 950, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -134,6 +126,10 @@ public class FormChecarAluno extends javax.swing.JFrame {
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_MenuActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,6 +170,8 @@ public class FormChecarAluno extends javax.swing.JFrame {
     private javax.swing.JButton btn_Menu;
     private javax.swing.JButton btn_Notas;
     private javax.swing.JButton btn_presenca;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

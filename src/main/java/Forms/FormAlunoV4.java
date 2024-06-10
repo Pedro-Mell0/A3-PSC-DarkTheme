@@ -23,7 +23,7 @@ public class FormAlunoV4 extends javax.swing.JFrame {
      */
     public FormAlunoV4() {
         initComponents();
-        this.setSize(500, 670);
+        this.setSize(960, 638);
         this.setLocationRelativeTo(null);
     }
 
@@ -36,113 +36,174 @@ public class FormAlunoV4 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Label_Nome = new javax.swing.JLabel();
         txt_Nome = new javax.swing.JTextField();
         txt_email = new javax.swing.JTextField();
-        txt_Telefone = new javax.swing.JTextField();
-        txt_Endereco = new javax.swing.JTextField();
-        txt_Nome_responsavel = new javax.swing.JTextField();
-        txt_Data_nascimento = new javax.swing.JTextField();
-        Label_Nome = new javax.swing.JLabel();
         Label_Email = new javax.swing.JLabel();
+        txt_Telefone = new javax.swing.JTextField();
         Label_Telefone = new javax.swing.JLabel();
+        txt_Endereco = new javax.swing.JTextField();
         Label_Endereco = new javax.swing.JLabel();
+        txt_Data_nascimento = new javax.swing.JTextField();
         Label_DataNasc = new javax.swing.JLabel();
+        txt_Nome_responsavel = new javax.swing.JTextField();
         Label_NomeResp = new javax.swing.JLabel();
+        txt_Senha = new javax.swing.JTextField();
+        Label_Senha = new javax.swing.JLabel();
         Label_Curso = new javax.swing.JLabel();
         ComboBox_Curso = new javax.swing.JComboBox<>();
-        Label_Senha = new javax.swing.JLabel();
-        txt_Senha = new javax.swing.JTextField();
-        btn_Atualizar = new javax.swing.JToggleButton();
         btn_Inserir = new javax.swing.JToggleButton();
+        btn_Atualizar = new javax.swing.JToggleButton();
         btn_Voltar = new javax.swing.JToggleButton();
+        Label_DataNasc1 = new javax.swing.JLabel();
+        Label_NomeResp1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Aluno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
+        Label_Nome.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Nome.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Nome.setText("Nome:");
+        getContentPane().add(Label_Nome);
+        Label_Nome.setBounds(40, 48, 60, 30);
 
+        txt_Nome.setBackground(new java.awt.Color(3, 16, 50));
         txt_Nome.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_Nome.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_Nome.setForeground(new java.awt.Color(204, 204, 204));
+        txt_Nome.setBorder(null);
         txt_Nome.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_Nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_NomeActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_Nome);
+        txt_Nome.setBounds(160, 60, 180, 30);
 
+        txt_email.setBackground(new java.awt.Color(3, 16, 50));
         txt_email.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_email.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_email.setForeground(new java.awt.Color(204, 204, 204));
+        txt_email.setBorder(null);
         txt_email.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_emailActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_email);
+        txt_email.setBounds(160, 117, 180, 30);
 
+        Label_Email.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Email.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Email.setText("Email:");
+        getContentPane().add(Label_Email);
+        Label_Email.setBounds(40, 105, 60, 30);
+
+        txt_Telefone.setBackground(new java.awt.Color(3, 16, 50));
         txt_Telefone.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_Telefone.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_Telefone.setForeground(new java.awt.Color(204, 204, 204));
+        txt_Telefone.setBorder(null);
         txt_Telefone.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_Telefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_TelefoneActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_Telefone);
+        txt_Telefone.setBounds(160, 173, 180, 30);
 
+        Label_Telefone.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Telefone.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Telefone.setText("Telefone:");
+        getContentPane().add(Label_Telefone);
+        Label_Telefone.setBounds(40, 157, 80, 40);
+
+        txt_Endereco.setBackground(new java.awt.Color(3, 16, 50));
         txt_Endereco.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_Endereco.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_Endereco.setForeground(new java.awt.Color(204, 204, 204));
+        txt_Endereco.setBorder(null);
         txt_Endereco.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_Endereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_EnderecoActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_Endereco);
+        txt_Endereco.setBounds(160, 230, 180, 30);
 
-        txt_Nome_responsavel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_Nome_responsavel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_Nome_responsavel.setMinimumSize(new java.awt.Dimension(30, 40));
-        txt_Nome_responsavel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_Nome_responsavelActionPerformed(evt);
-            }
-        });
+        Label_Endereco.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Endereco.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Endereco.setText("Endereço");
+        getContentPane().add(Label_Endereco);
+        Label_Endereco.setBounds(40, 218, 90, 30);
 
+        txt_Data_nascimento.setBackground(new java.awt.Color(3, 16, 50));
         txt_Data_nascimento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_Data_nascimento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_Data_nascimento.setForeground(new java.awt.Color(204, 204, 204));
+        txt_Data_nascimento.setBorder(null);
         txt_Data_nascimento.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_Data_nascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_Data_nascimentoActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_Data_nascimento);
+        txt_Data_nascimento.setBounds(160, 287, 180, 30);
 
-        Label_Nome.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_Nome.setText("Nome:");
-        Label_Nome.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        Label_DataNasc.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_DataNasc.setForeground(new java.awt.Color(204, 204, 204));
+        Label_DataNasc.setText("Nascimento:");
+        getContentPane().add(Label_DataNasc);
+        Label_DataNasc.setBounds(40, 285, 110, 20);
 
-        Label_Email.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_Email.setText("Email:");
-        Label_Email.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        txt_Nome_responsavel.setBackground(new java.awt.Color(3, 16, 50));
+        txt_Nome_responsavel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_Nome_responsavel.setForeground(new java.awt.Color(204, 204, 204));
+        txt_Nome_responsavel.setBorder(null);
+        txt_Nome_responsavel.setMinimumSize(new java.awt.Dimension(30, 40));
+        txt_Nome_responsavel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_Nome_responsavelActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_Nome_responsavel);
+        txt_Nome_responsavel.setBounds(160, 345, 180, 30);
 
-        Label_Telefone.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_Telefone.setText("Telefone:");
-        Label_Telefone.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        Label_NomeResp.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_NomeResp.setForeground(new java.awt.Color(204, 204, 204));
+        Label_NomeResp.setText("Responsável:");
+        getContentPane().add(Label_NomeResp);
+        Label_NomeResp.setBounds(40, 343, 110, 20);
 
-        Label_Endereco.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_Endereco.setText("Endereço");
-        Label_Endereco.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        txt_Senha.setBackground(new java.awt.Color(3, 16, 50));
+        txt_Senha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_Senha.setForeground(new java.awt.Color(204, 204, 204));
+        txt_Senha.setBorder(null);
+        txt_Senha.setMinimumSize(new java.awt.Dimension(30, 40));
+        txt_Senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_SenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_Senha);
+        txt_Senha.setBounds(160, 400, 180, 30);
 
-        Label_DataNasc.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_DataNasc.setText("Data de Nascimento:");
-        Label_DataNasc.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        Label_Senha.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Senha.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Senha.setText("Senha:");
+        getContentPane().add(Label_Senha);
+        Label_Senha.setBounds(40, 393, 60, 20);
 
-        Label_NomeResp.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_NomeResp.setText("Nome do Responsável:");
-        Label_NomeResp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Label_Curso.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Label_Curso.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Curso.setForeground(new java.awt.Color(204, 204, 204));
         Label_Curso.setText("Curso:");
-        Label_Curso.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        getContentPane().add(Label_Curso);
+        Label_Curso.setBounds(40, 450, 60, 20);
 
+        ComboBox_Curso.setBackground(new java.awt.Color(3, 16, 50));
+        ComboBox_Curso.setForeground(new java.awt.Color(204, 204, 204));
         ComboBox_Curso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboBox_Curso.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -158,152 +219,77 @@ public class FormAlunoV4 extends javax.swing.JFrame {
                 ComboBox_CursoActionPerformed(evt);
             }
         });
+        getContentPane().add(ComboBox_Curso);
+        ComboBox_Curso.setBounds(160, 457, 180, 30);
 
-        Label_Senha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_Senha.setText("Senha:");
-        Label_Senha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        txt_Senha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_Senha.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_Senha.setMinimumSize(new java.awt.Dimension(30, 40));
-        txt_Senha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_SenhaActionPerformed(evt);
-            }
-        });
-
-        btn_Atualizar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        btn_Atualizar.setText("ATUALIZAR");
-        btn_Atualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_AtualizarActionPerformed(evt);
-            }
-        });
-
-        btn_Inserir.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Inserir.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Inserir.setForeground(new java.awt.Color(204, 204, 204));
         btn_Inserir.setText("INSERIR");
+        btn_Inserir.setBorder(null);
+        btn_Inserir.setContentAreaFilled(false);
         btn_Inserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_InserirActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Inserir);
+        btn_Inserir.setBounds(210, 512, 130, 30);
 
-        btn_Voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Atualizar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Atualizar.setForeground(new java.awt.Color(204, 204, 204));
+        btn_Atualizar.setText("ATUALIZAR");
+        btn_Atualizar.setBorder(null);
+        btn_Atualizar.setContentAreaFilled(false);
+        btn_Atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AtualizarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Atualizar);
+        btn_Atualizar.setBounds(30, 512, 130, 30);
+
+        btn_Voltar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Voltar.setForeground(new java.awt.Color(204, 204, 204));
         btn_Voltar.setText("< Voltar");
+        btn_Voltar.setBorder(null);
+        btn_Voltar.setContentAreaFilled(false);
         btn_Voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_VoltarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Voltar);
+        btn_Voltar.setBounds(110, 559, 150, 30);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Label_NomeResp, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Label_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Label_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ComboBox_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_Nome_responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Label_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Label_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Label_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Label_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Label_DataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_Data_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_Data_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_DataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_Nome_responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_NomeResp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ComboBox_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+        Label_DataNasc1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_DataNasc1.setForeground(new java.awt.Color(204, 204, 204));
+        Label_DataNasc1.setText("Data de");
+        getContentPane().add(Label_DataNasc1);
+        Label_DataNasc1.setBounds(40, 272, 70, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        Label_NomeResp1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_NomeResp1.setForeground(new java.awt.Color(204, 204, 204));
+        Label_NomeResp1.setText("Nome do ");
+        getContentPane().add(Label_NomeResp1);
+        Label_NomeResp1.setBounds(40, 330, 80, 20);
+
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(23, 27, 80));
+        jTextField1.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(140, 82, 255));
+        jTextField1.setText("Bem-vindo Aluno");
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(530, 5, 330, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\FormAlunoDark.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 960, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -449,6 +435,10 @@ public class FormAlunoV4 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_VoltarActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -489,16 +479,19 @@ public class FormAlunoV4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboBox_Curso;
     private javax.swing.JLabel Label_Curso;
     private javax.swing.JLabel Label_DataNasc;
+    private javax.swing.JLabel Label_DataNasc1;
     private javax.swing.JLabel Label_Email;
     private javax.swing.JLabel Label_Endereco;
     private javax.swing.JLabel Label_Nome;
     private javax.swing.JLabel Label_NomeResp;
+    private javax.swing.JLabel Label_NomeResp1;
     private javax.swing.JLabel Label_Senha;
     private javax.swing.JLabel Label_Telefone;
     private javax.swing.JToggleButton btn_Atualizar;
     private javax.swing.JToggleButton btn_Inserir;
     private javax.swing.JToggleButton btn_Voltar;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txt_Data_nascimento;
     private javax.swing.JTextField txt_Endereco;
     private javax.swing.JTextField txt_Nome;

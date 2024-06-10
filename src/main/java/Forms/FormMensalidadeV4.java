@@ -23,7 +23,7 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
      */
     public FormMensalidadeV4() {
         initComponents();
-        this.setSize(500, 480);
+       this.setSize(960, 600);
         this.setLocationRelativeTo(null);
     }
 
@@ -37,21 +37,24 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
     private void initComponents() {
 
         txt_ALUNO = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
+        Label_Valor = new javax.swing.JLabel();
         txt_Valor = new javax.swing.JTextField();
         txt_DataVencimento = new javax.swing.JTextField();
-        txt_DataPagamento = new javax.swing.JTextField();
-        txt_DataEmissao = new javax.swing.JTextField();
-        Label_Valor = new javax.swing.JLabel();
         Label_DataVencimento = new javax.swing.JLabel();
         Label_DataPagamento = new javax.swing.JLabel();
+        txt_DataPagamento = new javax.swing.JTextField();
         Label_DataEmissao = new javax.swing.JLabel();
+        txt_DataEmissao = new javax.swing.JTextField();
         Label_DataEmissao1 = new javax.swing.JLabel();
         ComboBox_Aluno = new javax.swing.JComboBox<>();
         btn_Atualizar = new javax.swing.JToggleButton();
-        btn_Inserir = new javax.swing.JToggleButton();
         btn_Deletar = new javax.swing.JToggleButton();
+        btn_Inserir = new javax.swing.JToggleButton();
         btn_Voltar = new javax.swing.JToggleButton();
+        Label_DataEmissao2 = new javax.swing.JLabel();
+        Label_DataVencimento1 = new javax.swing.JLabel();
+        Label_DataPagamento1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         txt_ALUNO.setEditable(false);
         txt_ALUNO.setBackground(new java.awt.Color(230, 230, 230));
@@ -66,10 +69,17 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Mensalidade", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
+        Label_Valor.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Valor.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Valor.setText("Valor:");
+        getContentPane().add(Label_Valor);
+        Label_Valor.setBounds(50, 65, 50, 40);
 
+        txt_Valor.setBackground(new java.awt.Color(3, 16, 50));
         txt_Valor.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_Valor.setForeground(new java.awt.Color(204, 204, 204));
         txt_Valor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_Valor.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_Valor.addActionListener(new java.awt.event.ActionListener() {
@@ -77,8 +87,12 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
                 txt_ValorActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_Valor);
+        txt_Valor.setBounds(170, 90, 160, 34);
 
+        txt_DataVencimento.setBackground(new java.awt.Color(3, 16, 50));
         txt_DataVencimento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_DataVencimento.setForeground(new java.awt.Color(204, 204, 204));
         txt_DataVencimento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_DataVencimento.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_DataVencimento.addActionListener(new java.awt.event.ActionListener() {
@@ -86,8 +100,24 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
                 txt_DataVencimentoActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_DataVencimento);
+        txt_DataVencimento.setBounds(170, 164, 160, 34);
 
+        Label_DataVencimento.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_DataVencimento.setForeground(new java.awt.Color(204, 204, 204));
+        Label_DataVencimento.setText("Vencimento:");
+        getContentPane().add(Label_DataVencimento);
+        Label_DataVencimento.setBounds(50, 157, 100, 20);
+
+        Label_DataPagamento.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_DataPagamento.setForeground(new java.awt.Color(204, 204, 204));
+        Label_DataPagamento.setText("Pagamento:");
+        getContentPane().add(Label_DataPagamento);
+        Label_DataPagamento.setBounds(50, 230, 100, 20);
+
+        txt_DataPagamento.setBackground(new java.awt.Color(3, 16, 50));
         txt_DataPagamento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_DataPagamento.setForeground(new java.awt.Color(204, 204, 204));
         txt_DataPagamento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_DataPagamento.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_DataPagamento.addActionListener(new java.awt.event.ActionListener() {
@@ -95,8 +125,18 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
                 txt_DataPagamentoActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_DataPagamento);
+        txt_DataPagamento.setBounds(170, 238, 160, 34);
 
+        Label_DataEmissao.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_DataEmissao.setForeground(new java.awt.Color(204, 204, 204));
+        Label_DataEmissao.setText(" Emissão:");
+        getContentPane().add(Label_DataEmissao);
+        Label_DataEmissao.setBounds(45, 300, 80, 20);
+
+        txt_DataEmissao.setBackground(new java.awt.Color(3, 16, 50));
         txt_DataEmissao.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_DataEmissao.setForeground(new java.awt.Color(204, 204, 204));
         txt_DataEmissao.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_DataEmissao.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_DataEmissao.addActionListener(new java.awt.event.ActionListener() {
@@ -104,27 +144,17 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
                 txt_DataEmissaoActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_DataEmissao);
+        txt_DataEmissao.setBounds(170, 310, 160, 34);
 
-        Label_Valor.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_Valor.setText("Valor:");
-        Label_Valor.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Label_DataVencimento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_DataVencimento.setText("Data de Vencimento:");
-        Label_DataVencimento.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Label_DataPagamento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_DataPagamento.setText("Data de Pagamento:");
-        Label_DataPagamento.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Label_DataEmissao.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Label_DataEmissao.setText("Data de Emissão:");
-        Label_DataEmissao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Label_DataEmissao1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Label_DataEmissao1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_DataEmissao1.setForeground(new java.awt.Color(204, 204, 204));
         Label_DataEmissao1.setText("Aluno:");
-        Label_DataEmissao1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        getContentPane().add(Label_DataEmissao1);
+        Label_DataEmissao1.setBounds(50, 363, 50, 40);
 
+        ComboBox_Aluno.setBackground(new java.awt.Color(3, 16, 50));
+        ComboBox_Aluno.setForeground(new java.awt.Color(204, 204, 204));
         ComboBox_Aluno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboBox_Aluno.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -135,126 +165,82 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        getContentPane().add(ComboBox_Aluno);
+        ComboBox_Aluno.setBounds(170, 384, 160, 34);
 
-        btn_Atualizar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        btn_Atualizar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Atualizar.setForeground(new java.awt.Color(204, 204, 204));
         btn_Atualizar.setText("ATUALIZAR");
+        btn_Atualizar.setBorder(null);
+        btn_Atualizar.setContentAreaFilled(false);
         btn_Atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_AtualizarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Atualizar);
+        btn_Atualizar.setBounds(30, 455, 154, 30);
 
-        btn_Inserir.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
-        btn_Inserir.setText("INSERIR");
-        btn_Inserir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_InserirActionPerformed(evt);
-            }
-        });
-
-        btn_Deletar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        btn_Deletar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Deletar.setForeground(new java.awt.Color(204, 204, 204));
         btn_Deletar.setText("DELETAR");
+        btn_Deletar.setBorder(null);
+        btn_Deletar.setContentAreaFilled(false);
         btn_Deletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_DeletarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Deletar);
+        btn_Deletar.setBounds(30, 510, 154, 35);
 
-        btn_Voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        btn_Inserir.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Inserir.setForeground(new java.awt.Color(204, 204, 204));
+        btn_Inserir.setText("INSERIR");
+        btn_Inserir.setBorder(null);
+        btn_Inserir.setContentAreaFilled(false);
+        btn_Inserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_InserirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Inserir);
+        btn_Inserir.setBounds(210, 453, 160, 33);
+
+        btn_Voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Voltar.setForeground(new java.awt.Color(204, 204, 204));
         btn_Voltar.setText("< VOLTAR");
+        btn_Voltar.setBorder(null);
+        btn_Voltar.setContentAreaFilled(false);
         btn_Voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_VoltarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Voltar);
+        btn_Voltar.setBounds(210, 512, 160, 33);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(Label_DataEmissao1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(ComboBox_Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(Label_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txt_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(Label_DataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txt_DataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(Label_DataPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txt_DataPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(Label_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txt_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btn_Inserir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_Atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_Deletar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_Voltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_DataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_DataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_DataPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_DataPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_DataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Label_DataEmissao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ComboBox_Aluno, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(10, Short.MAX_VALUE))
-        );
+        Label_DataEmissao2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_DataEmissao2.setForeground(new java.awt.Color(204, 204, 204));
+        Label_DataEmissao2.setText("Data de");
+        getContentPane().add(Label_DataEmissao2);
+        Label_DataEmissao2.setBounds(50, 284, 70, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
-        );
+        Label_DataVencimento1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_DataVencimento1.setForeground(new java.awt.Color(204, 204, 204));
+        Label_DataVencimento1.setText("Data de");
+        getContentPane().add(Label_DataVencimento1);
+        Label_DataVencimento1.setBounds(50, 140, 70, 20);
+
+        Label_DataPagamento1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_DataPagamento1.setForeground(new java.awt.Color(204, 204, 204));
+        Label_DataPagamento1.setText("Data de ");
+        getContentPane().add(Label_DataPagamento1);
+        Label_DataPagamento1.setBounds(50, 215, 70, 19);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\MensalidadeDark.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 960, 610);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -437,14 +423,17 @@ public class FormMensalidadeV4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboBox_Aluno;
     private javax.swing.JLabel Label_DataEmissao;
     private javax.swing.JLabel Label_DataEmissao1;
+    private javax.swing.JLabel Label_DataEmissao2;
     private javax.swing.JLabel Label_DataPagamento;
+    private javax.swing.JLabel Label_DataPagamento1;
     private javax.swing.JLabel Label_DataVencimento;
+    private javax.swing.JLabel Label_DataVencimento1;
     private javax.swing.JLabel Label_Valor;
     private javax.swing.JToggleButton btn_Atualizar;
     private javax.swing.JToggleButton btn_Deletar;
     private javax.swing.JToggleButton btn_Inserir;
     private javax.swing.JToggleButton btn_Voltar;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txt_ALUNO;
     private javax.swing.JTextField txt_DataEmissao;
     private javax.swing.JTextField txt_DataPagamento;

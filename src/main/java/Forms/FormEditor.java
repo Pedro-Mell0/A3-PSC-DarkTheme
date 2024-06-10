@@ -20,7 +20,7 @@ public class FormEditor extends javax.swing.JFrame {
      */
     public FormEditor() {
         initComponents();
-        this.setSize(640, 430);
+         this.setSize(960, 600);
         this.setLocationRelativeTo(null);
     }
 
@@ -33,162 +33,114 @@ public class FormEditor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Panel_Main = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        btn_deletarA = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        btn_deletarP = new javax.swing.JButton();
         btn_Mensalidade = new javax.swing.JButton();
         btn_Cursos = new javax.swing.JButton();
-        btn_Menu = new javax.swing.JButton();
         Matricula = new javax.swing.JButton();
+        btn_Menu = new javax.swing.JButton();
+        btn_deletarA = new javax.swing.JButton();
+        btn_deletarP = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        Panel_Main.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Gestor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
-
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "ALUNO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Bell MT", 1, 18))); // NOI18N
-
-        btn_deletarA.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        btn_deletarA.setText("DELETAR");
-        btn_deletarA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_deletarAActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_deletarA, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(btn_deletarA, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "PROFESSOR", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Bell MT", 1, 18))); // NOI18N
-
-        btn_deletarP.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        btn_deletarP.setText("DELETAR");
-        btn_deletarP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_deletarPActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_deletarP, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(btn_deletarP, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        btn_Mensalidade.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        btn_Mensalidade.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Mensalidade.setForeground(new java.awt.Color(204, 204, 204));
         btn_Mensalidade.setText("MENSALIDADE");
+        btn_Mensalidade.setBorder(null);
+        btn_Mensalidade.setContentAreaFilled(false);
         btn_Mensalidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_MensalidadeActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Mensalidade);
+        btn_Mensalidade.setBounds(110, 184, 182, 30);
 
-        btn_Cursos.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        btn_Cursos.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Cursos.setForeground(new java.awt.Color(204, 204, 204));
         btn_Cursos.setText("CURSOS");
+        btn_Cursos.setBorder(null);
+        btn_Cursos.setContentAreaFilled(false);
         btn_Cursos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_CursosActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Cursos);
+        btn_Cursos.setBounds(110, 244, 180, 30);
 
-        btn_Menu.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
-        btn_Menu.setText("Menu");
-        btn_Menu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_MenuActionPerformed(evt);
-            }
-        });
-
-        Matricula.setFont(new java.awt.Font("Bell MT", 1, 24)); // NOI18N
-        Matricula.setText("Matrícula");
+        Matricula.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        Matricula.setForeground(new java.awt.Color(204, 204, 204));
+        Matricula.setText("MATRÍCULA");
+        Matricula.setBorder(null);
+        Matricula.setContentAreaFilled(false);
         Matricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MatriculaActionPerformed(evt);
             }
         });
+        getContentPane().add(Matricula);
+        Matricula.setBounds(110, 305, 182, 30);
 
-        javax.swing.GroupLayout Panel_MainLayout = new javax.swing.GroupLayout(Panel_Main);
-        Panel_Main.setLayout(Panel_MainLayout);
-        Panel_MainLayout.setHorizontalGroup(
-            Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_MainLayout.createSequentialGroup()
-                .addGroup(Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Panel_MainLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(105, 105, 105)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_MainLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(Matricula, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(btn_Cursos, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(btn_Mensalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_MainLayout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(btn_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        Panel_MainLayout.setVerticalGroup(
-            Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_MainLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addGroup(Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Matricula, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Cursos, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Mensalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-        );
+        btn_Menu.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        btn_Menu.setForeground(new java.awt.Color(204, 204, 204));
+        btn_Menu.setText("Menu");
+        btn_Menu.setBorder(null);
+        btn_Menu.setContentAreaFilled(false);
+        btn_Menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_MenuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Menu);
+        btn_Menu.setBounds(100, 488, 190, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Panel_Main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Panel_Main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        btn_deletarA.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_deletarA.setForeground(new java.awt.Color(204, 204, 204));
+        btn_deletarA.setText("DELETAR Aluno");
+        btn_deletarA.setBorder(null);
+        btn_deletarA.setContentAreaFilled(false);
+        btn_deletarA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deletarAActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_deletarA);
+        btn_deletarA.setBounds(110, 425, 180, 33);
+
+        btn_deletarP.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_deletarP.setForeground(new java.awt.Color(204, 204, 204));
+        btn_deletarP.setText("DELETAR Prof.");
+        btn_deletarP.setBorder(null);
+        btn_deletarP.setContentAreaFilled(false);
+        btn_deletarP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deletarPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_deletarP);
+        btn_deletarP.setBounds(110, 367, 180, 33);
+
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(23, 27, 80));
+        jTextField1.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(140, 82, 255));
+        jTextField1.setText("Acesso Restrito");
+        jTextField1.setToolTipText("");
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(60, 60, 289, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\Editor.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 940, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,28 +158,6 @@ public class FormEditor extends javax.swing.JFrame {
         MensalidadeV4.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_MensalidadeActionPerformed
-
-    private void btn_deletarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deletarPActionPerformed
-        // TODO add your handling code here:
-        String idProfessor = JOptionPane.showInputDialog(this, "Insira o ID do professor a ser deletado:");
-
-        // Verifica se um valor foi inserido
-        if (idProfessor != null && !idProfessor.trim().isEmpty()) {
-            try {
-                ProfessorV4DAO dao = new ProfessorV4DAO();
-                int ID = Integer.parseInt(idProfessor.trim()); // Converte o ID para inteiro
-                dao.deletar(ID); // Assume que o método deletar no DAO aceita um ID como inteiro
-                JOptionPane.showMessageDialog(this, "Professor deletado com sucesso!");
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "ID inválido. Insira um número válido.");
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Erro ao deletar professor.");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "ID não inserido.");
-        }
-    }//GEN-LAST:event_btn_deletarPActionPerformed
 
     private void btn_deletarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deletarAActionPerformed
         // TODO add your handling code here:
@@ -264,6 +194,32 @@ public class FormEditor extends javax.swing.JFrame {
         matricula.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_MatriculaActionPerformed
+
+    private void btn_deletarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deletarPActionPerformed
+        // TODO add your handling code here:
+        String idProfessor = JOptionPane.showInputDialog(this, "Insira o ID do professor a ser deletado:");
+
+        // Verifica se um valor foi inserido
+        if (idProfessor != null && !idProfessor.trim().isEmpty()) {
+            try {
+                ProfessorV4DAO dao = new ProfessorV4DAO();
+                int ID = Integer.parseInt(idProfessor.trim()); // Converte o ID para inteiro
+                dao.deletar(ID); // Assume que o método deletar no DAO aceita um ID como inteiro
+                JOptionPane.showMessageDialog(this, "Professor deletado com sucesso!");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "ID inválido. Insira um número válido.");
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Erro ao deletar professor.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "ID não inserido.");
+        }
+    }//GEN-LAST:event_btn_deletarPActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,13 +258,12 @@ public class FormEditor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Matricula;
-    private javax.swing.JPanel Panel_Main;
     private javax.swing.JButton btn_Cursos;
     private javax.swing.JButton btn_Mensalidade;
     private javax.swing.JButton btn_Menu;
     private javax.swing.JButton btn_deletarA;
     private javax.swing.JButton btn_deletarP;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

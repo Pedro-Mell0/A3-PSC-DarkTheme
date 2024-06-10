@@ -59,54 +59,62 @@ public class FormTelaMenu extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Fundação ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 80, 206, 44);
+        jLabel1.setBounds(60, 70, 206, 44);
 
         jLabel2.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(66, 135, 156));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Arte & Cultura");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 120, 280, 52);
+        jLabel2.setBounds(20, 110, 280, 52);
 
         btn_Administrar.setBackground(new java.awt.Color(94, 23, 235));
-        btn_Administrar.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        btn_Administrar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Administrar.setForeground(new java.awt.Color(204, 204, 204));
         btn_Administrar.setText("Administrar");
         btn_Administrar.setBorder(null);
+        btn_Administrar.setContentAreaFilled(false);
         btn_Administrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_AdministrarActionPerformed(evt);
             }
         });
         getContentPane().add(btn_Administrar);
-        btn_Administrar.setBounds(70, 460, 180, 34);
+        btn_Administrar.setBounds(70, 490, 180, 34);
 
         btn_Registrar.setBackground(new java.awt.Color(94, 23, 235));
-        btn_Registrar.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        btn_Registrar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Registrar.setForeground(new java.awt.Color(204, 204, 204));
         btn_Registrar.setText("Registrar-se");
         btn_Registrar.setBorder(null);
+        btn_Registrar.setContentAreaFilled(false);
         btn_Registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_RegistrarActionPerformed(evt);
             }
         });
         getContentPane().add(btn_Registrar);
-        btn_Registrar.setBounds(70, 405, 180, 34);
+        btn_Registrar.setBounds(72, 435, 180, 34);
 
         btn_Ok.setBackground(new java.awt.Color(94, 23, 235));
-        btn_Ok.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        btn_Ok.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btn_Ok.setForeground(new java.awt.Color(204, 204, 204));
         btn_Ok.setText("OK");
         btn_Ok.setBorder(null);
+        btn_Ok.setContentAreaFilled(false);
         btn_Ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_OkActionPerformed(evt);
             }
         });
         getContentPane().add(btn_Ok);
-        btn_Ok.setBounds(70, 350, 180, 34);
+        btn_Ok.setBounds(70, 380, 180, 34);
 
-        txt_email.setBackground(new java.awt.Color(255, 255, 255));
+        txt_email.setBackground(new java.awt.Color(13, 16, 50));
         txt_email.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_email.setForeground(new java.awt.Color(204, 204, 204));
         txt_email.setBorder(null);
+        txt_email.setCaretColor(new java.awt.Color(204, 204, 204));
         txt_email.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,20 +122,23 @@ public class FormTelaMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_email);
-        txt_email.setBounds(60, 214, 200, 30);
+        txt_email.setBounds(60, 218, 200, 35);
 
         Label_Nome1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        Label_Nome1.setForeground(new java.awt.Color(204, 204, 204));
         Label_Nome1.setText("Email:");
         getContentPane().add(Label_Nome1);
-        Label_Nome1.setBounds(60, 180, 70, 20);
+        Label_Nome1.setBounds(70, 190, 70, 20);
 
         Label_Nome2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        Label_Nome2.setForeground(new java.awt.Color(204, 204, 204));
         Label_Nome2.setText("Senha:");
         getContentPane().add(Label_Nome2);
-        Label_Nome2.setBounds(60, 260, 70, 21);
+        Label_Nome2.setBounds(70, 270, 70, 21);
 
-        txt_Senha.setBackground(new java.awt.Color(255, 255, 255));
+        txt_Senha.setBackground(new java.awt.Color(13, 16, 50));
         txt_Senha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_Senha.setForeground(new java.awt.Color(204, 204, 204));
         txt_Senha.setBorder(null);
         txt_Senha.setMinimumSize(new java.awt.Dimension(30, 40));
         txt_Senha.addActionListener(new java.awt.event.ActionListener() {
@@ -136,9 +147,9 @@ public class FormTelaMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_Senha);
-        txt_Senha.setBounds(60, 293, 200, 30);
+        txt_Senha.setBounds(60, 297, 200, 35);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\wave Fundação.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\960x600LoginDark1.png")); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 960, 600);
 

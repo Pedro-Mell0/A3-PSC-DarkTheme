@@ -22,7 +22,7 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
     public FormAtribuirAlunos() {
         initComponents();
 
-        this.setSize(500, 525);
+        this.setSize(960, 600);
         this.setLocationRelativeTo(null);
     }
 
@@ -35,33 +35,27 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        Label_Presenca = new javax.swing.JLabel();
-        Label_Notas = new javax.swing.JLabel();
         ComboBox_RA = new javax.swing.JComboBox<>();
         Label_RA = new javax.swing.JLabel();
         txt_NotaA1 = new javax.swing.JTextField();
-        Label_Notas1 = new javax.swing.JLabel();
         Label_Notas2 = new javax.swing.JLabel();
-        txt_Presenca = new javax.swing.JTextField();
-        txt_NotaA3 = new javax.swing.JTextField();
         txt_NotaA2 = new javax.swing.JTextField();
-        btn_menu = new javax.swing.JButton();
+        Label_Notas = new javax.swing.JLabel();
+        txt_NotaA3 = new javax.swing.JTextField();
+        Label_Notas1 = new javax.swing.JLabel();
+        txt_Presenca = new javax.swing.JTextField();
+        Label_Presenca = new javax.swing.JLabel();
         btn_Salvar = new javax.swing.JButton();
+        btn_menu = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "ALUNO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 18))); // NOI18N
-
-        Label_Presenca.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        Label_Presenca.setText("Presença:");
-        Label_Presenca.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Label_Notas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        Label_Notas.setText("Nota A2:");
-        Label_Notas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
+        ComboBox_RA.setBackground(new java.awt.Color(3, 16, 50));
+        ComboBox_RA.setForeground(new java.awt.Color(204, 204, 204));
         ComboBox_RA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboBox_RA.setBorder(null);
         ComboBox_RA.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 ComboBox_RAAncestorAdded(evt);
@@ -76,129 +70,116 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
                 ComboBox_RAActionPerformed(evt);
             }
         });
+        getContentPane().add(ComboBox_RA);
+        ComboBox_RA.setBounds(170, 110, 160, 33);
 
-        Label_RA.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Label_RA.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_RA.setForeground(new java.awt.Color(204, 204, 204));
         Label_RA.setText("RA:");
-        Label_RA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        getContentPane().add(Label_RA);
+        Label_RA.setBounds(50, 93, 40, 20);
 
+        txt_NotaA1.setBackground(new java.awt.Color(3, 16, 50));
         txt_NotaA1.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        txt_NotaA1.setForeground(new java.awt.Color(204, 204, 204));
+        txt_NotaA1.setBorder(null);
         txt_NotaA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_NotaA1ActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_NotaA1);
+        txt_NotaA1.setBounds(170, 186, 160, 33);
 
-        Label_Notas1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        Label_Notas1.setText("Nota A3:");
-        Label_Notas1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Label_Notas2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Label_Notas2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Notas2.setForeground(new java.awt.Color(204, 204, 204));
         Label_Notas2.setText("Nota A1:");
-        Label_Notas2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        getContentPane().add(Label_Notas2);
+        Label_Notas2.setBounds(50, 164, 70, 30);
 
-        txt_Presenca.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        txt_Presenca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_PresencaActionPerformed(evt);
-            }
-        });
-
-        txt_NotaA3.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        txt_NotaA3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_NotaA3ActionPerformed(evt);
-            }
-        });
-
+        txt_NotaA2.setBackground(new java.awt.Color(3, 16, 50));
         txt_NotaA2.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        txt_NotaA2.setForeground(new java.awt.Color(204, 204, 204));
+        txt_NotaA2.setBorder(null);
         txt_NotaA2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_NotaA2ActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_NotaA2);
+        txt_NotaA2.setBounds(170, 260, 160, 33);
 
-        btn_menu.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        btn_menu.setText("Menu");
-        btn_menu.addActionListener(new java.awt.event.ActionListener() {
+        Label_Notas.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Notas.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Notas.setText("Nota A2:");
+        getContentPane().add(Label_Notas);
+        Label_Notas.setBounds(50, 238, 70, 30);
+
+        txt_NotaA3.setBackground(new java.awt.Color(3, 16, 50));
+        txt_NotaA3.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        txt_NotaA3.setForeground(new java.awt.Color(204, 204, 204));
+        txt_NotaA3.setBorder(null);
+        txt_NotaA3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_menuActionPerformed(evt);
+                txt_NotaA3ActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_NotaA3);
+        txt_NotaA3.setBounds(170, 335, 160, 33);
+
+        Label_Notas1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Notas1.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Notas1.setText("Nota A3:");
+        getContentPane().add(Label_Notas1);
+        Label_Notas1.setBounds(50, 314, 70, 30);
+
+        txt_Presenca.setBackground(new java.awt.Color(3, 16, 50));
+        txt_Presenca.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        txt_Presenca.setForeground(new java.awt.Color(204, 204, 204));
+        txt_Presenca.setBorder(null);
+        txt_Presenca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_PresencaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_Presenca);
+        txt_Presenca.setBounds(170, 408, 160, 33);
+
+        Label_Presenca.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Presenca.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Presenca.setText("Presença:");
+        getContentPane().add(Label_Presenca);
+        Label_Presenca.setBounds(50, 381, 100, 40);
 
         btn_Salvar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        btn_Salvar.setText("Salvar");
+        btn_Salvar.setForeground(new java.awt.Color(204, 204, 204));
+        btn_Salvar.setText("SALVAR");
+        btn_Salvar.setBorder(null);
+        btn_Salvar.setContentAreaFilled(false);
         btn_Salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_SalvarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Salvar);
+        btn_Salvar.setBounds(210, 471, 130, 34);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Label_RA, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                    .addComponent(Label_Notas2, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                    .addComponent(Label_Notas, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                    .addComponent(Label_Notas1, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                    .addComponent(Label_Presenca, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                    .addComponent(btn_menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_NotaA1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ComboBox_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_NotaA2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_NotaA3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_Presenca, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(54, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ComboBox_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_Notas2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_NotaA1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_Notas, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_NotaA2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_Notas1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_NotaA3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_Presenca, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_Presenca, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(54, Short.MAX_VALUE))
-        );
+        btn_menu.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_menu.setForeground(new java.awt.Color(204, 204, 204));
+        btn_menu.setText("MENU");
+        btn_menu.setBorder(null);
+        btn_menu.setContentAreaFilled(false);
+        btn_menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_menuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_menu);
+        btn_menu.setBounds(43, 471, 130, 34);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\Atribuir.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 940, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -323,7 +304,7 @@ public class FormAtribuirAlunos extends javax.swing.JFrame {
     private javax.swing.JLabel Label_RA;
     private javax.swing.JButton btn_Salvar;
     private javax.swing.JButton btn_menu;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txt_NotaA1;
     private javax.swing.JTextField txt_NotaA2;
     private javax.swing.JTextField txt_NotaA3;

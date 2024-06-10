@@ -21,7 +21,7 @@ public class FormNotas extends javax.swing.JFrame {
      */
     public FormNotas() {
         initComponents();
-        this.setSize(450, 470);
+       this.setSize(960, 600);
         this.setLocationRelativeTo(null);
 
     }
@@ -35,168 +35,143 @@ public class FormNotas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        txt_A1 = new javax.swing.JTextField();
-        Label_RA = new javax.swing.JLabel();
-        Label_A2 = new javax.swing.JLabel();
-        txt_A2 = new javax.swing.JTextField();
-        Label_A3 = new javax.swing.JLabel();
-        txt_A3 = new javax.swing.JTextField();
-        Label_A1 = new javax.swing.JLabel();
-        btn_Voltar = new javax.swing.JButton();
         btn_buscar = new javax.swing.JButton();
         txt_RA = new javax.swing.JTextField();
+        Label_RA = new javax.swing.JLabel();
+        txt_A1 = new javax.swing.JTextField();
+        txt_A2 = new javax.swing.JTextField();
+        txt_A3 = new javax.swing.JTextField();
+        Label_A1 = new javax.swing.JLabel();
+        Label_A2 = new javax.swing.JLabel();
+        Label_A3 = new javax.swing.JLabel();
+        btn_Voltar = new javax.swing.JButton();
+        Presenças = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Notas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
-
-        txt_A1.setEditable(false);
-        txt_A1.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
-        txt_A1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_A1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_A1ActionPerformed(evt);
-            }
-        });
-
-        Label_RA.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        Label_RA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_RA.setText("RA:");
-        Label_RA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Label_A2.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        Label_A2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_A2.setText("A2:");
-        Label_A2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        txt_A2.setEditable(false);
-        txt_A2.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
-        txt_A2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_A2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_A2ActionPerformed(evt);
-            }
-        });
-
-        Label_A3.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        Label_A3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_A3.setText("A3:");
-        Label_A3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        txt_A3.setEditable(false);
-        txt_A3.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
-        txt_A3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_A3.setAlignmentY(0.9F);
-        txt_A3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_A3ActionPerformed(evt);
-            }
-        });
-
-        Label_A1.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        Label_A1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_A1.setText("A1:");
-        Label_A1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        btn_Voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
-        btn_Voltar.setText("< VOLTAR");
-        btn_Voltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_VoltarActionPerformed(evt);
-            }
-        });
+        getContentPane().setLayout(null);
 
         btn_buscar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        btn_buscar.setText("Buscar");
+        btn_buscar.setForeground(new java.awt.Color(204, 204, 204));
+        btn_buscar.setText("BUSCAR");
+        btn_buscar.setBorder(null);
+        btn_buscar.setContentAreaFilled(false);
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_buscarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_buscar);
+        btn_buscar.setBounds(207, 495, 130, 35);
 
+        txt_RA.setBackground(new java.awt.Color(3, 16, 50));
         txt_RA.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
         txt_RA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_RA.setBorder(null);
+        getContentPane().add(txt_RA);
+        txt_RA.setBounds(170, 210, 160, 33);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Label_RA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Label_A3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Label_A2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Label_A1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_A1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_A2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_A3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(24, 24, 24))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(14, 14, 14))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(btn_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(Label_RA, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_RA, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                            .addComponent(btn_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_A1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_A1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_A2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_A2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Label_A3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_A3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btn_Voltar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addGap(16, 16, 16))
-        );
+        Label_RA.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_RA.setForeground(new java.awt.Color(204, 204, 204));
+        Label_RA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_RA.setText("RA:");
+        getContentPane().add(Label_RA);
+        Label_RA.setBounds(87, 190, 30, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        txt_A1.setEditable(false);
+        txt_A1.setBackground(new java.awt.Color(3, 16, 50));
+        txt_A1.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        txt_A1.setForeground(new java.awt.Color(204, 204, 204));
+        txt_A1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_A1.setBorder(null);
+        txt_A1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_A1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_A1);
+        txt_A1.setBounds(170, 284, 160, 33);
+
+        txt_A2.setEditable(false);
+        txt_A2.setBackground(new java.awt.Color(3, 16, 50));
+        txt_A2.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        txt_A2.setForeground(new java.awt.Color(204, 204, 204));
+        txt_A2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_A2.setBorder(null);
+        txt_A2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_A2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_A2);
+        txt_A2.setBounds(170, 359, 160, 33);
+
+        txt_A3.setEditable(false);
+        txt_A3.setBackground(new java.awt.Color(3, 16, 50));
+        txt_A3.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        txt_A3.setForeground(new java.awt.Color(204, 204, 204));
+        txt_A3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_A3.setAlignmentY(0.9F);
+        txt_A3.setBorder(null);
+        txt_A3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_A3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_A3);
+        txt_A3.setBounds(170, 431, 160, 33);
+
+        Label_A1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_A1.setForeground(new java.awt.Color(204, 204, 204));
+        Label_A1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_A1.setText("A1:");
+        getContentPane().add(Label_A1);
+        Label_A1.setBounds(86, 268, 30, 20);
+
+        Label_A2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_A2.setForeground(new java.awt.Color(204, 204, 204));
+        Label_A2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_A2.setText("A2:");
+        getContentPane().add(Label_A2);
+        Label_A2.setBounds(86, 338, 30, 30);
+
+        Label_A3.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_A3.setForeground(new java.awt.Color(204, 204, 204));
+        Label_A3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_A3.setText("A3:");
+        getContentPane().add(Label_A3);
+        Label_A3.setBounds(86, 411, 30, 30);
+
+        btn_Voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Voltar.setForeground(new java.awt.Color(204, 204, 204));
+        btn_Voltar.setText("< VOLTAR");
+        btn_Voltar.setBorder(null);
+        btn_Voltar.setContentAreaFilled(false);
+        btn_Voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_VoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Voltar);
+        btn_Voltar.setBounds(43, 495, 130, 35);
+
+        Presenças.setEditable(false);
+        Presenças.setBackground(new java.awt.Color(23, 27, 80));
+        Presenças.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        Presenças.setForeground(new java.awt.Color(140, 82, 255));
+        Presenças.setText("Notas");
+        Presenças.setBorder(null);
+        Presenças.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PresençasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Presenças);
+        Presenças.setBounds(140, 110, 110, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\Notas.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 950, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,6 +228,10 @@ public class FormNotas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_buscarActionPerformed
 
+    private void PresençasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresençasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PresençasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -294,9 +273,10 @@ public class FormNotas extends javax.swing.JFrame {
     private javax.swing.JLabel Label_A2;
     private javax.swing.JLabel Label_A3;
     private javax.swing.JLabel Label_RA;
+    private javax.swing.JTextField Presenças;
     private javax.swing.JButton btn_Voltar;
     private javax.swing.JButton btn_buscar;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txt_A1;
     private javax.swing.JTextField txt_A2;
     private javax.swing.JTextField txt_A3;

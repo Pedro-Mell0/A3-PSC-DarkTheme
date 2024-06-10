@@ -19,7 +19,7 @@ public class FormCursoV4 extends javax.swing.JFrame {
      */
     public FormCursoV4() {
         initComponents();
-        this.setSize(200, 271);
+           this.setSize(960, 600);
         this.setLocationRelativeTo(null);
     }
 
@@ -27,129 +27,130 @@ public class FormCursoV4 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Main_Frame = new javax.swing.JPanel();
-        txt_Carga_Horaria = new javax.swing.JTextField();
-        txt_Nome_Curso = new javax.swing.JTextField();
-        btn_Atualizar = new javax.swing.JToggleButton();
         btn_Deletar = new javax.swing.JToggleButton();
         btn_Inserir = new javax.swing.JToggleButton();
-        txt_Nome_Do_Curso = new javax.swing.JTextField();
-        txt_Carga_Horaria_Curso = new javax.swing.JTextField();
         btn_voltar = new javax.swing.JToggleButton();
+        btn_Atualizar = new javax.swing.JToggleButton();
+        txt_Carga_Horaria_Curso = new javax.swing.JTextField();
+        txt_Nome_Do_Curso = new javax.swing.JTextField();
+        Label_Valor = new javax.swing.JLabel();
+        Label_Valor1 = new javax.swing.JLabel();
+        Label_Valor2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cursos Fundação Arte&Cultura");
         setMinimumSize(new java.awt.Dimension(750, 500));
         getContentPane().setLayout(null);
 
-        Main_Frame.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "CURSOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24))); // NOI18N
-
-        txt_Carga_Horaria.setEditable(false);
-        txt_Carga_Horaria.setBackground(new java.awt.Color(230, 230, 230));
-        txt_Carga_Horaria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txt_Carga_Horaria.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_Carga_Horaria.setText("Carga horária");
-        txt_Carga_Horaria.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        txt_Nome_Curso.setEditable(false);
-        txt_Nome_Curso.setBackground(new java.awt.Color(230, 230, 230));
-        txt_Nome_Curso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txt_Nome_Curso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_Nome_Curso.setText("Nome do curso");
-        txt_Nome_Curso.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        btn_Atualizar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
-        btn_Atualizar.setText("ATUALIZAR");
-        btn_Atualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_AtualizarActionPerformed(evt);
-            }
-        });
-
-        btn_Deletar.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        btn_Deletar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Deletar.setForeground(new java.awt.Color(204, 204, 204));
         btn_Deletar.setText("DELETAR");
+        btn_Deletar.setBorder(null);
+        btn_Deletar.setContentAreaFilled(false);
         btn_Deletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_DeletarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_Deletar);
+        btn_Deletar.setBounds(30, 420, 157, 34);
 
-        btn_Inserir.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        btn_Inserir.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Inserir.setForeground(new java.awt.Color(204, 204, 204));
         btn_Inserir.setText("INSERIR");
+        btn_Inserir.setBorder(null);
+        btn_Inserir.setContentAreaFilled(false);
         btn_Inserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_InserirActionPerformed(evt);
             }
         });
-
-        txt_Nome_Do_Curso.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_Nome_Do_Curso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_Nome_Do_CursoActionPerformed(evt);
-            }
-        });
-
-        txt_Carga_Horaria_Curso.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(btn_Inserir);
+        btn_Inserir.setBounds(27, 480, 160, 34);
 
         btn_voltar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        btn_voltar.setText("< Voltar");
+        btn_voltar.setForeground(new java.awt.Color(204, 204, 204));
+        btn_voltar.setText("< VOLTAR");
+        btn_voltar.setBorder(null);
+        btn_voltar.setContentAreaFilled(false);
         btn_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_voltarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_voltar);
+        btn_voltar.setBounds(210, 420, 157, 34);
 
-        javax.swing.GroupLayout Main_FrameLayout = new javax.swing.GroupLayout(Main_Frame);
-        Main_Frame.setLayout(Main_FrameLayout);
-        Main_FrameLayout.setHorizontalGroup(
-            Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Main_FrameLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Main_FrameLayout.createSequentialGroup()
-                        .addComponent(txt_Nome_Do_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_Carga_Horaria_Curso))
-                    .addGroup(Main_FrameLayout.createSequentialGroup()
-                        .addComponent(txt_Nome_Curso)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_Carga_Horaria, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Main_FrameLayout.createSequentialGroup()
-                        .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Main_FrameLayout.createSequentialGroup()
-                                .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(Main_FrameLayout.createSequentialGroup()
-                                .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(37, 37, 37))
-        );
-        Main_FrameLayout.setVerticalGroup(
-            Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Main_FrameLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_Carga_Horaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_Nome_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_Nome_Do_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_Carga_Horaria_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Main_FrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Inserir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
+        btn_Atualizar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        btn_Atualizar.setForeground(new java.awt.Color(204, 204, 204));
+        btn_Atualizar.setText("ATUALIZAR");
+        btn_Atualizar.setBorder(null);
+        btn_Atualizar.setContentAreaFilled(false);
+        btn_Atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AtualizarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Atualizar);
+        btn_Atualizar.setBounds(210, 480, 160, 34);
 
-        getContentPane().add(Main_Frame);
-        Main_Frame.setBounds(10, 10, 569, 270);
+        txt_Carga_Horaria_Curso.setBackground(new java.awt.Color(3, 16, 50));
+        txt_Carga_Horaria_Curso.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txt_Carga_Horaria_Curso.setForeground(new java.awt.Color(204, 204, 204));
+        txt_Carga_Horaria_Curso.setBorder(null);
+        getContentPane().add(txt_Carga_Horaria_Curso);
+        txt_Carga_Horaria_Curso.setBounds(170, 234, 160, 34);
+
+        txt_Nome_Do_Curso.setBackground(new java.awt.Color(3, 16, 50));
+        txt_Nome_Do_Curso.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txt_Nome_Do_Curso.setForeground(new java.awt.Color(204, 204, 204));
+        txt_Nome_Do_Curso.setBorder(null);
+        txt_Nome_Do_Curso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_Nome_Do_CursoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_Nome_Do_Curso);
+        txt_Nome_Do_Curso.setBounds(170, 308, 160, 34);
+
+        Label_Valor.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Valor.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Valor.setText("do Curso:");
+        getContentPane().add(Label_Valor);
+        Label_Valor.setBounds(50, 300, 110, 20);
+
+        Label_Valor1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Valor1.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Valor1.setText("Nome do curso:");
+        getContentPane().add(Label_Valor1);
+        Label_Valor1.setBounds(43, 218, 120, 20);
+
+        Label_Valor2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
+        Label_Valor2.setForeground(new java.awt.Color(204, 204, 204));
+        Label_Valor2.setText("Carga Horária");
+        getContentPane().add(Label_Valor2);
+        Label_Valor2.setBounds(50, 285, 110, 20);
+
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(23, 27, 80));
+        jTextField1.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(140, 82, 255));
+        jTextField1.setText("Cursos");
+        jTextField1.setToolTipText("");
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(130, 120, 140, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pedro\\Desktop\\DesignNovo\\CursosDark2.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 960, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -243,6 +244,10 @@ public class FormCursoV4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btn_voltarActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     
     
     
@@ -284,14 +289,16 @@ public class FormCursoV4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Main_Frame;
+    private javax.swing.JLabel Label_Valor;
+    private javax.swing.JLabel Label_Valor1;
+    private javax.swing.JLabel Label_Valor2;
     private javax.swing.JToggleButton btn_Atualizar;
     private javax.swing.JToggleButton btn_Deletar;
     private javax.swing.JToggleButton btn_Inserir;
     private javax.swing.JToggleButton btn_voltar;
-    private javax.swing.JTextField txt_Carga_Horaria;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txt_Carga_Horaria_Curso;
-    private javax.swing.JTextField txt_Nome_Curso;
     private javax.swing.JTextField txt_Nome_Do_Curso;
     // End of variables declaration//GEN-END:variables
 }
