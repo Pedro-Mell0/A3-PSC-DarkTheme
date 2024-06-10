@@ -8,4 +8,4 @@ com/mycompany/db: Classe de conexão com o Banco de Dados
 
 dao: Classe contendo os métodos da Interface.
 
-Vídeo com projeto em execução: 
+Link do vídeo com projeto em execução: https://youtu.be/ehYAXJFbq38
